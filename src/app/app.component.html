@@ -1,7 +1,27 @@
-<app-switch-lang></app-switch-lang>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+        </button>
+        <h1>Innovation Group</h1>
+        <app-switch-lang></app-switch-lang>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a mat-list-item>Roles</a>
+            <a mat-list-item>Candidates</a>
+            <a mat-list-item>Create Candidates</a>
+            <a mat-list-item>Create Role</a>
+            <a mat-list-item>Ofices and Projects</a>
+        </mat-nav-list>
 
-<h1>{{'Idioma' | translate}}</h1>
-<h1>{{'TextoIdioma' | translate}}</h1>
-
-
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 <router-outlet></router-outlet>
