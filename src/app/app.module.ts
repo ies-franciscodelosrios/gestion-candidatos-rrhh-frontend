@@ -18,6 +18,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { SwitchLangComponent } from './components/switch-lang/switch-lang.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -26,6 +27,7 @@ import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     SwitchLangComponent,
     SidenavComponent,
+    HomeComponent,
     
   ],
   imports: [ 
