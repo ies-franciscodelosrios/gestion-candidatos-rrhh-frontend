@@ -10,6 +10,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -19,6 +21,7 @@ import { SwitchLangComponent } from './components/switch-lang/switch-lang.compon
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
+import { JobsComponent } from './pages/jobs/jobs.component';
 
 
 
@@ -28,6 +31,7 @@ import { HomeComponent } from './pages/home/home.component';
     SwitchLangComponent,
     SidenavComponent,
     HomeComponent,
+    JobsComponent,
     
   ],
   imports: [ 
@@ -39,6 +43,8 @@ import { HomeComponent } from './pages/home/home.component';
     MatListModule,
     HttpClientModule,
     MatButtonModule,
+    MatGridListModule,
+    MatCardModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
