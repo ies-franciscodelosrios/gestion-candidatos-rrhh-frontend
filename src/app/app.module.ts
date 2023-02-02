@@ -17,22 +17,21 @@ import {MatCardModule} from '@angular/material/card';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { SwitchLangComponent } from './components/switch-lang/switch-lang.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './pages/login/login.component';
+import { Error404Component } from './pages/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
-import { JobComponent } from './pages/job/job.component';
+import { JobComponent } from './pages/home/job/job.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SwitchLangComponent,
-    SidenavComponent,
+    LoginComponent,
+    Error404Component,
     HomeComponent,
-    JobComponent,
-    
+    JobComponent
   ],
   imports: [ 
     BrowserModule,
