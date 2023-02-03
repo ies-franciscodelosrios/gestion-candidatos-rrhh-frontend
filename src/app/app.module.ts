@@ -22,6 +22,13 @@ import { LoginComponent } from './pages/login/login.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JobComponent } from './pages/home/job/job.component';
+import { GuestComponent } from './pages/guest/guest.component';
+import { MainComponent } from './pages/home/main/main.component';
+import { JobsOverviewComponent } from './pages/home/jobs-overview/jobs-overview.component';
+import { CandidateComponent } from './pages/home/candidate/candidate.component';
+import { CandidatesOverviewComponent } from './pages/home/candidates-overview/candidates-overview.component';
+import { CreateJobComponent } from './pages/home/create-job/create-job.component';
+import { CreateCandidateComponent } from './pages/home/create-candidate/create-candidate.component';
 
 
 
@@ -31,7 +38,14 @@ import { JobComponent } from './pages/home/job/job.component';
     LoginComponent,
     Error404Component,
     HomeComponent,
-    JobComponent
+    JobComponent,
+    GuestComponent,
+    MainComponent,
+    JobsOverviewComponent,
+    CandidateComponent,
+    CandidatesOverviewComponent,
+    CreateJobComponent,
+    CreateCandidateComponent
   ],
   imports: [ 
     BrowserModule,
