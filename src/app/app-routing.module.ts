@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
-import { CandidatePageComponent } from './pages/candidate-page/candidate-page.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JobComponent } from './pages/home/job/job.component';
@@ -32,11 +31,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'candidate',
-    component: CandidatePageComponent,
-    canActivate:[AuthenticationGuard]
   },
   {
     path: '',
