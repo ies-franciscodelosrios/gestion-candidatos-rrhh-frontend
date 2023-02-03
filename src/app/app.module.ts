@@ -29,6 +29,7 @@ import { CandidateComponent } from './pages/home/candidate/candidate.component';
 import { CandidatesOverviewComponent } from './pages/home/candidates-overview/candidates-overview.component';
 import { CreateJobComponent } from './pages/home/create-job/create-job.component';
 import { CreateCandidateComponent } from './pages/home/create-candidate/create-candidate.component';
+import {SwitchLangComponent} from "./components/switch-lang/switch-lang.component";
 
 
 
@@ -46,7 +47,8 @@ import { CreateCandidateComponent } from './pages/home/create-candidate/create-c
     CandidateComponent,
     CandidatesOverviewComponent,
     CreateJobComponent,
-    CreateCandidateComponent
+    CreateCandidateComponent,
+    SwitchLangComponent
   ],
   imports: [
     MatBadgeModule,
