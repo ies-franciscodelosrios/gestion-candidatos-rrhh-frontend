@@ -19,6 +19,7 @@ import { SwitchLangComponent } from './components/switch-lang/switch-lang.compon
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './pages/home/home.component';
+import {MatBadgeModule} from '@angular/material/badge'
 
 
 
@@ -31,6 +32,7 @@ import { HomeComponent } from './pages/home/home.component';
     
   ],
   imports: [ 
+    MatBadgeModule,
     BrowserModule,
     MatToolbarModule,
     MatIconModule,
