@@ -1,4 +1,10 @@
 {
-    "Idioma": "Titutlo",
-    "TextoIdioma": "Español"
+    "Candidate": "Candidatos",
+    "Show": "mostrar",
+    "Roles": "Roles",
+    "Candidates": "Candidatos",
+    "Create Candidates": "Crear candidatos",
+    "Create Role": "Crear rol",
+    "Ofices and Projects": "Oficinas y Proyectos",
+    "Applicatión": "Solicitud"
 }

@@ -10,9 +10,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
-
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -41,6 +41,7 @@ import { JobComponent } from './pages/home/job/job.component';
     MatSidenavModule,
     MatListModule,
     HttpClientModule,
+    MatCardModule,
     MatButtonModule,
     MatGridListModule,
     MatCardModule,
