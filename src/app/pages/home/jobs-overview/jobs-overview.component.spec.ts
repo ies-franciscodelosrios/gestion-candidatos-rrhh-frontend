@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SwitchLangComponent } from './switch-lang.component';
 
-describe('SwitchLangComponent', () => {
-  let component: SwitchLangComponent;
-  let fixture: ComponentFixture<SwitchLangComponent>;
+import { JobsOverviewComponent } from './jobs-overview.component';
+
+describe('JobsOverviewComponent', () => {
+  let component: JobsOverviewComponent;
+  let fixture: ComponentFixture<JobsOverviewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SwitchLangComponent ]
+      declarations: [ JobsOverviewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwitchLangComponent);
+    fixture = TestBed.createComponent(JobsOverviewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
