@@ -30,8 +30,7 @@ import { CandidatesOverviewComponent } from './pages/home/candidates-overview/ca
 import { CreateJobComponent } from './pages/home/create-job/create-job.component';
 import { CreateCandidateComponent } from './pages/home/create-candidate/create-candidate.component';
 import {SwitchLangComponent} from "./components/switch-lang/switch-lang.component";
-
-
+import {HomeRoutingModule} from "./pages/home/home-routing.module";
 
 
 @NgModule({
@@ -51,11 +50,12 @@ import {SwitchLangComponent} from "./components/switch-lang/switch-lang.componen
     SwitchLangComponent
   ],
   imports: [
+    AppRoutingModule,
+    HomeRoutingModule,
     MatBadgeModule,
     BrowserModule,
     MatToolbarModule,
     MatIconModule,
-    AppRoutingModule,
     MatSidenavModule,
     MatListModule,
     HttpClientModule,
