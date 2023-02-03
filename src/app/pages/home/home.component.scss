@@ -1,0 +1,35 @@
+.toolbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.tranduccion {
+  margin-left: auto !important;
+  
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+mat-sidenav-container {
+  top: 64px !important;
+}
+
+@media(max-width: 599px) {
+  mat-sidenav-container {
+    top: 56px !important;
+  }
+}
+.container{
+   display: flex;
+  flex-direction: row;
+
+}
+.cartas{
+width: 50%;
+margin-left: 30px;
+margin-right: 30px;
+margin-top: 25px;
+}
