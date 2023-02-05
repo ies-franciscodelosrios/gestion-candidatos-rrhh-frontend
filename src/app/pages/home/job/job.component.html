@@ -5,13 +5,13 @@
   <div id="containerAll">
     <div style="width: 50%;">
       <div style="height:55%">
-        <h1 class="titulo">Descripcion</h1>
+        <h1 class="titulo">{{'Descripcion' |translate}}</h1>
         <div *ngIf="!editMode" style="height:70%">
           <div class="area-texto">
             {{text}}
           </div>
           <div class="boton-area">
-            <button mat-raised-button color="primary" (click)="editMode = true">Edit</button>
+            <button mat-raised-button color="primary" (click)="editMode = true">{{'Editar' | translate}}</button>
           </div>
         </div>
         <div *ngIf="editMode" style="height:70%">
@@ -19,16 +19,16 @@
             <textarea [(ngModel)]="text" class="text-area"></textarea>
           </div>
           <div class="boton-area">
-            <button mat-raised-button color="primary" (click)="editMode = false">Save</button>
+            <button mat-raised-button color="primary" (click)="editMode = false"></button>
           </div>
         </div>
       </div>
       <div style="height:45%">
         <div class="contenedor-2">
-          <h1 class="titulo-2">Añadir Candidato</h1>
+          <h1 class="titulo-2">{{'Añadir' | translate}} {{'Candidato' | translate}}</h1>
           <div>
             <input matInput placeholder="" [(ngModel)]="searchTerm">
-            <button mat-raised-button color="primary" (click)="search()">Search</button>
+            <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
           </div>
         </div>
         <div class="centrado">
@@ -39,13 +39,13 @@
     </div>
     <div class="contenedor-3">
       <mat-tab-group mat-align-tabs="start" id="tabsJob">
-        <mat-tab label="Selecionado">Contenido a introducir</mat-tab>
+        <mat-tab label="Selecionado">{{'Contenido' | translate}} {{'a' | translate}} {{'introducir' | translate}}</mat-tab>
         <mat-tab label="En Proceso"></mat-tab>
         <mat-tab label="Descartado"></mat-tab>
       </mat-tab-group>
       <div class="input-search">
         <input matInput placeholder="" [(ngModel)]="searchTerm">
-        <button mat-raised-button color="primary" (click)="search()">Search</button>
+        <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
       </div>
     </div>
   </div>

@@ -1,1 +1,62 @@
-<p>candidates-overview works!</p>
+<mat-toolbar>
+    <span>Candidates</span>
+    <span class="spacer">Aqui va el icono</span>
+</mat-toolbar>
+<div class="contenedor-principal">
+    <div class="contenedor-1">
+        <div class="buscador">
+            <h1>Candidates</h1>
+            <div>
+                <input matInput placeholder="" [(ngModel)]="searchTerm">
+                <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
+              </div>
+        </div>
+        <div class="contenedor-tabla">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Surname</td>
+                    <td>Job Application</td>
+                </tr>
+                <tr>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                </tr>
+                <tr>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="contenedor-2">
+        <div class="buscador">
+            <h1>Candidates In Process</h1>
+            <div>
+                <input matInput placeholder="" [(ngModel)]="searchTerm">
+                <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
+              </div>
+        </div>
+        <div class="contenedor-tabla">
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Surname</td>
+                    <td>Job Application</td>
+                </tr>
+                <tr>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                </tr>
+                <tr>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                    <td>Contenido</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

@@ -2,9 +2,17 @@
     "Candidate": "Candidatos",
     "Show": "mostrar",
     "Roles": "Roles",
-    "Candidates": "Candidatos",
+    "Candidato": "Candidato",
     "Create Candidates": "Crear candidatos",
     "Create Role": "Crear rol",
     "Ofices and Projects": "Oficinas y Proyectos",
-    "Applicatión": "Solicitud"
+    "Applicatión": "Solicitud",
+    "Descripcion": "Descripción",
+    "Buscar": "Buscar",
+    "Añadir": "Añadir",
+    "Editar": "Editar",
+    "Contenido": "Contenido",
+    "a": "a",
+    "introducir": "introducir",
+    "Seleccionado": "Seleccionado"
 }
