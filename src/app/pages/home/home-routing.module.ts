@@ -7,13 +7,14 @@ import {CreateJobComponent} from "./create-job/create-job.component";
 import {CreateCandidateComponent} from "./create-candidate/create-candidate.component";
 import {JobComponent} from "./job/job.component";
 import {CandidateComponent} from "./candidate/candidate.component";
+import { CandidatesOverviewComponent } from './candidates-overview/candidates-overview.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, children: [
       {path: '', redirectTo: 'main', pathMatch: 'full'},
       {path: 'main', component: MainComponent},
       {path: 'jobs', component: JobsOverviewComponent},
-      {path: 'candidates', component: JobsOverviewComponent},
+      {path: 'candidates', component: CandidatesOverviewComponent},
       {path: 'newJob', component: CreateJobComponent},
       {path: 'newCandidate', component: CreateCandidateComponent},
       {path: 'jobs/:id', component: JobComponent},
