@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./pages/job";
-
+@import "fonts";
+@import "colors";
 @font-face {
   font-family: 'ProtaStandard';
   src: url('../assets/fonts/Prota_Standard_Font.ttf') format('opentype');
@@ -11,19 +12,6 @@
   src: url('../assets/fonts/NeueHaasUnicaPro-Bold.otf') format('opentype');
 }
 
-@font-face {
-  font-family: 'NeueHaasUnicaPro - Regular';
-  src: url('../assets/fonts/NeueHaasUnicaPro-Regular.otf') format('opentype');
-}
 
-@font-face {
-  font-family: 'NeueHaasUnicaPro - Medium';
-  src: url('../assets/fonts/NeueHaasUnicaPro-Medium.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'NeueHaasUnicaPro - Light';
-  src: url('../assets/fonts/NeueHaasUnicaPro-Light.otf') format('opentype');
-}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
