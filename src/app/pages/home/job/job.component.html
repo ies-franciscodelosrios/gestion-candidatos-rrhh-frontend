@@ -1,14 +1,52 @@
-<mat-toolbar>
+<mat-toolbar >
     <span>JOB Tittle</span>
     <span class="spacer">Aqui va el icono</span>
-</mat-toolbar>
-<mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="baseline">
-        <h1>Descripcion</h1>
-        <label></label>
-    </mat-grid-tile>
-    <mat-grid-tile [rowspan]="2">2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-  </mat-grid-list>
-  
+  </mat-toolbar>
+  <div id="containerAll">
+    <div style="width: 50%;">
+      <div style="height:55%">
+        <h1 class="titulo">{{'Descripcion' |translate}}</h1>
+        <div *ngIf="!editMode" style="height:70%">
+          <div class="area-texto">
+            {{text}}
+          </div>
+          <div class="boton-area">
+            <button mat-raised-button color="primary" (click)="editMode = true">{{'Editar' | translate}}</button>
+          </div>
+        </div>
+        <div *ngIf="editMode" style="height:70%">
+          <div class="area-texto">
+            <textarea [(ngModel)]="text" class="text-area"></textarea>
+          </div>
+          <div class="boton-area">
+            <button mat-raised-button color="primary" (click)="editMode = false"></button>
+          </div>
+        </div>
+      </div>
+      <div style="height:45%">
+        <div class="contenedor-2">
+          <h1 class="titulo-2">{{'Añadir' | translate}} {{'Candidato' | translate}}</h1>
+          <div>
+            <input matInput placeholder="" [(ngModel)]="searchTerm">
+            <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
+          </div>
+        </div>
+        <div class="centrado">
+          <div class="cuadro-contenedor-2">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contenedor-3">
+      <mat-tab-group mat-align-tabs="start" id="tabsJob">
+        <mat-tab label="Selecionado">{{'Contenido' | translate}} {{'a' | translate}} {{'introducir' | translate}}</mat-tab>
+        <mat-tab label="En Proceso"></mat-tab>
+        <mat-tab label="Descartado"></mat-tab>
+      </mat-tab-group>
+      <div class="input-search">
+        <input matInput placeholder="" [(ngModel)]="searchTerm">
+        <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
+      </div>
+    </div>
+  </div>
 
