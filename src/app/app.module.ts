@@ -25,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { HomeComponent } from './pages/home/home.component';
-import { MatBadgeModule } from '@angular/material/badge'
+import { MatBadgeModule } from '@angular/material/badge';
 import { JobComponent } from './pages/home/job/job.component';
 import { GuestComponent } from './pages/guest/guest.component';
 import { MainComponent } from './pages/home/main/main.component';

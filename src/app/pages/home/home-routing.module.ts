@@ -21,7 +21,6 @@ const routes: Routes = [
       {path: 'candidates/:id', component: CandidateComponent}
   ]}
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
