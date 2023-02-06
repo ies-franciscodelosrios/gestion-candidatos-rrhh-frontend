@@ -16,6 +16,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -70,6 +71,7 @@ import {HomeRoutingModule} from "./pages/home/home-routing.module";
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatDatepickerModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
