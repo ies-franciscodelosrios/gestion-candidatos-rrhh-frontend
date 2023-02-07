@@ -1,1 +1,26 @@
-<p>create-job works!</p>
+<h4>Office</h4>
+<mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let office of offices" [value]="office.value">
+            {{office.viewValue}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<h4>Project</h4>
+<mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let project of projects" [value]="project.value">
+            {{project.viewValue}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<h4>Title</h4>
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <input matInput placeholder="Text Input">
+    </mat-form-field>
+  </form>
