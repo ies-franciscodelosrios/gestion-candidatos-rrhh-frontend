@@ -8,9 +8,12 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
+  mostrar: Boolean=false;
+  mensaje: String="Innovation Group";
+  mensaje_enlace:String ="Mostrar";
   constructor(
-    public translate: TranslateService
+    public translate: TranslateService,
+
   ) {
     translate.addLangs(['en', 'es']);
     const lang = translate.getBrowserLang()
@@ -22,5 +25,15 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrarOcultar(){
+     if(this.mostrar){
+      this.mostrar=false;
+      this.mensaje_enlace="Mostrar"
+     }else{
+      this.mostrar=true;
+      this.mensaje_enlace="Ocultar"
+     }
+    
+  }
 }
 
