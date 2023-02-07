@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
+import { CandidateService } from 'src/app/services/api/candidate.service';
 
 @Component({
   selector: 'app-candidate',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private candidateServ: CandidateService) { }
 
   ngOnInit(): void {
+  }
+  public async mostrar(){
+  const candidate = this.candidateServ.getById(2);
+  const aux = await lastValueFrom(candidate);
+  console.log(aux);
   }
 
 }
