@@ -35,10 +35,12 @@ import { CreateJobComponent } from './pages/home/create-job/create-job.component
 import { CreateCandidateComponent } from './pages/home/create-candidate/create-candidate.component';
 import {SwitchLangComponent} from "./components/switch-lang/switch-lang.component";
 import {HomeRoutingModule} from "./pages/home/home-routing.module";
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
   declarations: [
+   
     AppComponent,
     LoginComponent,
     Error404Component,
@@ -54,6 +56,7 @@ import {HomeRoutingModule} from "./pages/home/home-routing.module";
     SwitchLangComponent
   ],
   imports: [
+    MatSelectModule,
     AppRoutingModule,
     HomeRoutingModule,
     MatBadgeModule,
