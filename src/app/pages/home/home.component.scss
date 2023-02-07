@@ -21,14 +21,10 @@ mat-sidenav-container {
     top: 56px !important;
   }
 }
-.container{
-  display: flex;
-  flex-direction: row;
+.botonMenu{
+  margin-right: 5px !important;
+}
+.svgBlanco{
+  filter: invert(100%) brightness(200%);
+}
 
-}
-.cartas{
-width: 50%;
-margin-left: 30px;
-margin-right: 30px;
-margin-top: 25px;
-}
