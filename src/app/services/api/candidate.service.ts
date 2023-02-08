@@ -11,11 +11,15 @@ export class CandidateService {
 
   constructor(private http: HttpClient) { }
 
-  public Insert(candidate: Candidate): Observable<boolean> {
+  public insert(candidate: Candidate): Observable<boolean> {
     return this.http.post<boolean>(`${environment.url}/Candidate/Insert`,candidate)
   }
 
   getById(id: number): Observable<Candidate> {
     return this.http.get<Candidate>(`${environment.url}/Candidate/GetById/${id}`);
+  }
+
+  getAll(): Observable<Candidate[]> {
+    return this.http.get<Candidate[]>(`${environment.url}/Candidate/GetAll`);
   }
 }
