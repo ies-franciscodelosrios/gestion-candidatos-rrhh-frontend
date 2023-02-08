@@ -1,26 +1,45 @@
-<h4>Office</h4>
-<mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-        <mat-option *ngFor="let office of offices" [value]="office.value">
-            {{office.viewValue}}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
+<div>
+    <div class="divSeparador">
+        <h4>Office</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let office of offices" [value]="office.value">
+                    {{office.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-<h4>Project</h4>
-<mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-    <mat-select>
-        <mat-option *ngFor="let project of projects" [value]="project.value">
-            {{project.viewValue}}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
+        <h4>Project</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let project of projects" [value]="project.value">
+                    {{project.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-<h4>Title</h4>
-<form class="example-form">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <input matInput placeholder="Text Input">
-    </mat-form-field>
-  </form>
+        <h4>Title</h4>
+        <form class="example-form">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <input matInput placeholder="Text Input">
+            </mat-form-field>
+        </form>
+    </div>
+    <div class="organizador">
+        <h4>Description</h4>
+        <form class="example-form2">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Leave a comment</mat-label>
+                <textarea matInput placeholder="Ex. It makes me feel..." class="area"></textarea>
+            </mat-form-field>
+        </form>
+
+        <section>
+            <div class="example-button-row">
+                <button mat-raised-button color="primary">Create</button>
+            </div>
+        </section>
+    </div>
+</div>
