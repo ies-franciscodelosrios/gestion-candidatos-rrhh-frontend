@@ -37,6 +37,8 @@ import { CreateCandidateComponent } from './pages/home/create-candidate/create-c
 import {SwitchLangComponent} from "./components/switch-lang/switch-lang.component";
 import {HomeRoutingModule} from "./pages/home/home-routing.module";
 import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -57,6 +59,8 @@ import { MatSelectModule } from '@angular/material/select';
     SwitchLangComponent
   ],
   imports: [
+    MatMenuModule,
+    MatTableModule,
     MatSelectModule,
     AppRoutingModule,
     HomeRoutingModule,

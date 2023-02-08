@@ -10,11 +10,12 @@ export class SwitchLangComponent implements OnInit {
 
   constructor(public translate: TranslateService) { }
 
-  switchLang(lang: string) {
-    this.translate.use(lang);
-    console.log(this.translate.currentLang)
-  }
   ngOnInit(): void {
   }
-
+  translateSpanish(){
+    this.translate.use("es");
+  }
+  translateEnglish(){
+    this.translate.use("en");
+  }
 }
