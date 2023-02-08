@@ -39,7 +39,7 @@ import {HomeRoutingModule} from "./pages/home/home-routing.module";
 import { MatSelectModule } from '@angular/material/select';
 import {CommonModule} from "@angular/common";
 import {MatNativeDateModule} from "@angular/material/core";
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
 
@@ -76,6 +76,7 @@ import {MatNativeDateModule} from "@angular/material/core";
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
+    MatSnackBarModule,
     MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {

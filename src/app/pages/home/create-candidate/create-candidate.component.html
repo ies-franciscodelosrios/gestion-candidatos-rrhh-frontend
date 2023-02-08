@@ -26,18 +26,19 @@
 
       <div class="fechaGenero">
         <mat-form-field appearance="fill">
-          <mat-label>{{'Fecha de nacimiento'| translate}}</mat-label>
-          <input type="date" formControlName="date" matInput [matDatepicker]="picker">
+          <mat-label>{{"Fecha de nacimiento" | translate}}</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="picker">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
+
         <mat-form-field appearance="fill">
           <mat-label>{{'Sexo'| translate}}</mat-label>
-          <mat-select>
-            <mat-option value="xy">{{'Hombre'|translate}}</mat-option>
-            <mat-option value="xx">{{'Mujer'|translate}}</mat-option>
+          <mat-select formControlName="gender">
+            <mat-option value="mujer">{{'Hombre'|translate}}</mat-option>
+            <mat-option value="hombre">{{'Mujer'|translate}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>

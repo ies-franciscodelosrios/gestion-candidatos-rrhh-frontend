@@ -4,7 +4,7 @@ export interface Candidate{
     dni:string,
     gender:string,
     birthdate:Date,
-    mail:string,
+    email:string,
     password:string
 
 }
