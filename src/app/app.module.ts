@@ -15,7 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -37,11 +37,12 @@ import { CreateCandidateComponent } from './pages/home/create-candidate/create-c
 import {SwitchLangComponent} from "./components/switch-lang/switch-lang.component";
 import {HomeRoutingModule} from "./pages/home/home-routing.module";
 import { MatSelectModule } from '@angular/material/select';
-
+import {CommonModule} from "@angular/common";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
-   
+
     AppComponent,
     LoginComponent,
     Error404Component,
@@ -57,11 +58,12 @@ import { MatSelectModule } from '@angular/material/select';
     SwitchLangComponent
   ],
   imports: [
-    MatSelectModule,
-    AppRoutingModule,
-    HomeRoutingModule,
-    MatBadgeModule,
+    CommonModule,
     BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    MatSelectModule,
+    MatBadgeModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -73,8 +75,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule,
     MatDatepickerModule,
+    MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -82,7 +84,9 @@ import { MatSelectModule } from '@angular/material/select';
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule
+    AppRoutingModule,
+    HomeRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
