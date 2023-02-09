@@ -9,10 +9,10 @@ export const environment = {
     endpoints:{
       candidateGetAll:'/Candidate/GetAll',
       candidateGetById:'/Candidate/GetById',
-      candidateInsert:'/Candidate/Insert'
+      candidateInsert:'/Candidate/Insert',
+      offerGetAll:'/Offer/GetAll',
     }
   }
-  
 };
 
 /*

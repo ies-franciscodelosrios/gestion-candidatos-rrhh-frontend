@@ -14,5 +14,16 @@
     "Contenido": "Contenido",
     "a": "a",
     "introducir": "introducir",
-    "Seleccionado": "Seleccionado"
+    "Seleccionado": "Seleccionado",
+    "Nombre": "Nombre",
+    "Dni": "Dni",
+    "Email": "Email",
+    "Genero": "Género",
+    "Fecha de nacimiento": "Fecha de nacimiento",
+    "Cargo": "Cargo",
+    "Proyecto": "Proyecto",
+    "Titulo": "Título",
+    "Fecha de creacion": "Fecha de creación",
+    "Fecha de cierre": "Fecha de cierre"
+
 }

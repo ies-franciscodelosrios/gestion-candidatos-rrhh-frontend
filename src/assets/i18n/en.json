@@ -14,5 +14,15 @@
     "Contenido": "Content",
     "a": "to",
     "introducir": "introduce",
-    "Seleccionado": "Selected"
+    "Seleccionado": "Selected",
+    "Nombre": "Name",
+    "Dni": "Dni",
+    "Email": "Email",
+    "Genero": "Gender",
+    "Fecha de nacimiento": "Birth date",
+    "Cargo": "Role",
+    "Proyecto": "Project",
+    "Titulo": "Title",
+    "Fecha de creacion": "Creation date",
+    "Fecha de cierre": "Closing date"
 }
