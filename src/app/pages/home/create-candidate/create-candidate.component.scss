@@ -3,6 +3,7 @@
 }
 .contenedor-principal{
     display: flex;
+    justify-content: center;
     height: calc(100% - 80px);
     width: 100%;
 }
@@ -23,7 +24,13 @@
     max-width: 500px;
     width: 100%;
   }
-  .full-width {
+.full-width {
     width: 100%;
     margin: 5%;
+}
+
+.fechaGenero{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }

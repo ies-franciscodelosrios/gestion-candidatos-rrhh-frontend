@@ -1,35 +1,67 @@
 <mat-toolbar>
-    <span>New Candidate</span>
-    <span class="spacer">Aqui va el icono</span>
+  <span>New Candidate</span>
 </mat-toolbar>
 <div class="contenedor-principal">
-    <div class="contenedor-1">
-        <form class="example-form">
-            <mat-form-field class="full-width">
-                <mat-label>{{'Nombre' | translate}}</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="full-width">
-                <mat-label>{{'Apellidos' | translate}}</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="full-width">
-                <mat-label>{{'Email' | translate}}</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field class="full-width">
-                <mat-label>{{'Dni' | translate}}</mat-label>
-                <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>Choose a date</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-              </mat-form-field>
-        </form>
-    </div>
-    <div class="contenedor-2">
-    </div>
+  <div class="contenedor-1">
+    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field class="full-width">
+        <mat-label>{{'Nombre' | translate}}</mat-label>
+        <input matInput type="text" formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Apellidos' | translate}}</mat-label>
+        <input type="text" formControlName="surname" matInput>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Email' | translate}}</mat-label>
+        <input type="email" formControlName="email" matInput>
+        <ng-container *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+          <mat-error>{{'Email invalido' | translate}}</mat-error>
+        </ng-container>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Dni' | translate}}</mat-label>
+        <input type="text" formControlName="dni" matInput>
+      </mat-form-field>
+
+      <div class="fechaGenero">
+        <mat-form-field appearance="fill">
+          <mat-label>{{"Fecha de nacimiento" | translate}}</mat-label>
+          <input formControlName="date" matInput [matDatepicker]="picker">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'Sexo'| translate}}</mat-label>
+          <mat-select formControlName="gender">
+            <mat-option value="mujer">{{'Mujer'|translate}}</mat-option>
+            <mat-option value="hombre">{{'Hombre'|translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{'Contraseña' | translate}}</mat-label>
+        <input type="password" matInput formControlName="password">
+      </mat-form-field>
+
+      <ng-container *ngIf="form.get('password')?.hasError('minlength')">
+        <mat-error>{{'La contraseña debe tener al menos 5 caracteres' | translate}}</mat-error>
+      </ng-container>
+
+      <mat-form-field class="full-width">
+        <mat-label>{{'Confirme contraseña' | translate}}</mat-label>
+        <input type="password" matInput formControlName="confirmPassword">
+      </mat-form-field>
+
+      <ng-container *ngIf="form.errors?.['notSame']">
+        <mat-error>{{'Las contraseñas no coinciden' | translate}}</mat-error>
+      </ng-container>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">{{'Crear'|translate}}</button>
+    </form>
+  </div>
 </div>

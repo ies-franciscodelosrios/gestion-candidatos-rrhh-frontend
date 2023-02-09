@@ -12,7 +12,7 @@ export class CandidateService {
   constructor(private http: HttpClient) { }
 
   public insert(candidate: Candidate): Observable<boolean> {
-    return this.http.post<boolean>(`${environment.url}/Candidate/Insert`,candidate)
+    return this.http.post<boolean>(`${environment}/Candidate/Insert`,candidate)
   }
 
   getById(id: number): Observable<Candidate> {

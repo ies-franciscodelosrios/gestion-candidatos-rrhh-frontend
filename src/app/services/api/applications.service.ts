@@ -24,4 +24,5 @@ export class ApplicationsService {
   getAll(): Observable<Application[]> {
     return this.http.get<Application[]>(`${environment.url}/Application/GetAll`);
   }
+
 }

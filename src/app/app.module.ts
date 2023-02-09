@@ -15,7 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -37,13 +37,14 @@ import { CreateCandidateComponent } from './pages/home/create-candidate/create-c
 import {SwitchLangComponent} from "./components/switch-lang/switch-lang.component";
 import {HomeRoutingModule} from "./pages/home/home-routing.module";
 import { MatSelectModule } from '@angular/material/select';
+import {CommonModule} from "@angular/common";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
-
-
 @NgModule({
   declarations: [
-   
+
     AppComponent,
     LoginComponent,
     Error404Component,
@@ -59,13 +60,15 @@ import {MatMenuModule} from '@angular/material/menu';
     SwitchLangComponent
   ],
   imports: [
+
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
     MatMenuModule,
     MatTableModule,
     MatSelectModule,
-    AppRoutingModule,
-    HomeRoutingModule,
     MatBadgeModule,
-    BrowserModule,
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
@@ -77,8 +80,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule,
     MatDatepickerModule,
+    MatSnackBarModule,
+    MatNativeDateModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -86,7 +90,9 @@ import {MatMenuModule} from '@angular/material/menu';
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule
+    AppRoutingModule,
+    HomeRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
