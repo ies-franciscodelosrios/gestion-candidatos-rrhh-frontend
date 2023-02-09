@@ -1,34 +1,43 @@
-<mat-toolbar >
-    <span>Jobs</span>
-    <span class="spacer">Aqui va el icono</span>
+<mat-toolbar id="toolbar">
+    <h1>Ofertas de Trabajo</h1>
   </mat-toolbar>
 <div class="contenedor-principal">
     <div class="contenedor-1">
-        <h1>Open Jobs</h1>
+
         <div class="contenedor-tabla">
-            <table>
-                <tr>
-                  <td>Job</td>
-                  <td>Project</td>
-                  <td>Office</td>
-                  <td>Candidates</td>
-                </tr>
-                <tr>
-                    <td>Job</td>
-                    <td>Project</td>
-                    <td>Office</td>
-                    <td>Candidates</td>
-                </tr>
-                <tr>
-                    <td>Job</td>
-                    <td>Project</td>
-                    <td>Office</td>
-                    <td>Candidates</td>
-                </tr>
+            <table mat-table [dataSource]="offers">
+
+                <ng-container matColumnDef="tittle">
+                  <th mat-header-cell *matHeaderCellDef> {{"Titulo" | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.tittle}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="office">
+                  <th mat-header-cell *matHeaderCellDef> {{"Cargo" | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.office}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="project">
+                  <th mat-header-cell *matHeaderCellDef> {{"Proyecto" | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{element.project}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="creation_Date">
+                  <th mat-header-cell *matHeaderCellDef> {{"Fecha de creacion" | translate}} </th>
+                  <td mat-cell *matCellDef="let element"> {{formatBirthdate(element.creation_Date)}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="close_Date">
+                    <th mat-header-cell *matHeaderCellDef> {{"Fecha de cierre" | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{formatBirthdate(element.close_Date)}} </td>
+                  </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               </table>
         </div> 
     </div>
-    <div class="contenedor-2">
+    <!-- <div class="contenedor-2">
         <h1>Closed Jobs</h1>
         <div class="contenedor-tabla">
             <table>
@@ -52,5 +61,5 @@
                 </tr>
               </table>
         </div> 
-    </div>
+    </div> -->
 </div>

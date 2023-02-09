@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 interface Office {
   value: string;
@@ -45,7 +46,7 @@ export class CreateJobComponent implements OnInit{
     {value: 'project-1', viewValue: 'Project2'},
     {value: 'project-2', viewValue: 'Project3'},
   ];
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }

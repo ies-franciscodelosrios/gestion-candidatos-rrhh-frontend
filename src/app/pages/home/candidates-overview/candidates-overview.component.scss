@@ -1,3 +1,4 @@
+@import "colors";
 .spacer {
     margin-left: auto;
 }
@@ -30,4 +31,13 @@
 .buscador{
     display:flex;
     justify-content: center;
+}
+.mat-header-cell{
+    background-color: $navy-blue-90 !important;
+    color: white;
+    text-align: center;
+    
+}
+#toolbar.mat-toolbar-single-row{
+    justify-content: center !important;
 }
