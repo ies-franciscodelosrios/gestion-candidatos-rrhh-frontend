@@ -5,7 +5,7 @@
 }
 
 .example-form2 {
-    min-width: 150px;
+    min-width: 350px;
     max-width: 400px;
     width: 100%;
 }
@@ -15,12 +15,62 @@
 }
 
 .divSeparador {
-    margin-left: 15px;
+    margin-left: 5%;
     margin-top: 15px;
 }
-.area{
-    height: 300px;
+
+.area {
+    height: 150px;
 }
-.organizador{
+
+.organizador {
+    display: flex;
+    flex-direction: column;
+}
+
+.distancia {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
 
 }
+
+.centrar {
+    align-self: center;
+    margin-top: 100px;
+
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+    margin-right: 40%;
+}
+
+.example-container {
+    height: 400px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+}
+
+.example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+  .agrandar{
+    width: 400px;
+  }

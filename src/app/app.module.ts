@@ -40,6 +40,8 @@ import { MatSelectModule } from '@angular/material/select';
 import {CommonModule} from "@angular/common";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
 
@@ -58,10 +60,13 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     SwitchLangComponent
   ],
   imports: [
+
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatMenuModule,
+    MatTableModule,
     MatSelectModule,
     MatBadgeModule,
     MatToolbarModule,
