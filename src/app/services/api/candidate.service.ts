@@ -12,14 +12,14 @@ export class CandidateService {
   constructor(private http: HttpClient) { }
 
   public insert(candidate: Candidate): Observable<boolean> {
-    return this.http.post<boolean>(`${environment}/Candidate/Insert`,candidate)
+    return this.http.post<boolean>(`${environment.api.url}${environment.api.endpoints.candidateInsert}`,candidate)
   }
 
   getById(id: number): Observable<Candidate> {
-    return this.http.get<Candidate>(`${environment.url}/Candidate/GetById/${id}`);
+    return this.http.get<Candidate>(`${environment.api.url}${environment.api.endpoints.candidateGetById}/${id}`);
   }
 
   getAll(): Observable<Candidate[]> {
-    return this.http.get<Candidate[]>(`${environment.url}/Candidate/GetAll`);
+    return this.http.get<Candidate[]>(`${environment.api.url}${environment.api.endpoints.candidateGetAll}`);
   }
 }

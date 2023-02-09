@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  url: '172.31.176.1:7228'
+  api:{
+    url: 'https://localhost:4200/api',
+    endpoints:{
+      candidateGetAll:'/Candidate/GetAll',
+      candidateGetById:'/Candidate/GetById',
+      candidateInsert:'/Candidate/Insert'
+    }
+  }
+  
 };
 
 /*
