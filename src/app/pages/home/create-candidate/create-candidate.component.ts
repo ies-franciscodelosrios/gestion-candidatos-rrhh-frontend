@@ -44,7 +44,7 @@ export class CreateCandidateComponent implements OnInit {
     };
 
     if (this.isCandidateValid(candidate)) {
-      //this.resetForm();
+      this.resetForm();
       firstValueFrom(this.candidateService.insert(candidate)).then(response => {
           if (response) {
             this.snack.open('Candidato creado correctamente', 'Ok', {duration: 5000});
