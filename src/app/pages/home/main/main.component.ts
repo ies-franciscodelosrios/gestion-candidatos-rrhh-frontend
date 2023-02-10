@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { CandidateService } from 'src/app/services/api/candidate.service';
 import { JobService } from 'src/app/services/api/job.service';
 
@@ -23,8 +24,8 @@ export class MainComponent implements OnInit {
       this.jobs=res.length;
     });
   }
-  public getNumberOfCandidates() {
-    this.jobService.getAll().subscribe((res) => {
+  public async getNumberOfCandidates() {
+    this.candidateService.getAll().subscribe((res) => {
       this.candidates=res.length;
     });
   }
