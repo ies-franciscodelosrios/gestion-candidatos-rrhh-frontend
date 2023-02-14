@@ -1,6 +1,6 @@
 <div class="organizador">
     <div class="distancia">
-        <div class="colum">
+        <div class="colum1">
             <h4>Office</h4>
             <mat-form-field appearance="fill" class="agrandar">
                 <mat-label>Select</mat-label>
@@ -30,7 +30,7 @@
 
               
         </div>
-        <div class="colum">
+        <div class="colum2">
             <h4>Description</h4>
             <form class="example-form2">
                 <mat-form-field class="example-full-width" appearance="fill">
@@ -52,7 +52,7 @@
                     <!-- Symbol Column -->
                     <ng-container matColumnDef="symbol">
                         <th mat-header-cell *matHeaderCellDef> Added </th>
-                        <td mat-cell *matCellDef="let element">{{element.symbol}}</td>
+                        <td mat-cell *matCellDef="let element"><mat-checkbox [color]="task.color">Added</mat-checkbox></td>
                     </ng-container>
                     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

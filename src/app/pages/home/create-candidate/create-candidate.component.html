@@ -1,15 +1,15 @@
 <mat-toolbar>
-  <span>New Candidate</span>
+  <span>{{'New Candidate' | translate}}</span>
 </mat-toolbar>
 <div class="contenedor-principal">
   <div class="contenedor-1">
     <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
       <mat-form-field class="full-width">
-        <mat-label>{{'Nombre' | translate}}</mat-label>
+        <mat-label>{{'Name' | translate}}</mat-label>
         <input matInput type="text" formControlName="name">
       </mat-form-field>
       <mat-form-field class="full-width">
-        <mat-label>{{'Apellidos' | translate}}</mat-label>
+        <mat-label>{{'Surname' | translate}}</mat-label>
         <input type="text" formControlName="surname" matInput>
       </mat-form-field>
       <mat-form-field class="full-width">
@@ -26,7 +26,7 @@
 
       <div class="fechaGenero">
         <mat-form-field appearance="fill">
-          <mat-label>{{"Fecha de nacimiento" | translate}}</mat-label>
+          <mat-label>{{"Date of Birth" | translate}}</mat-label>
           <input formControlName="date" matInput [matDatepicker]="picker">
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -44,7 +44,7 @@
       </div>
 
       <mat-form-field class="full-width">
-        <mat-label>{{'Contraseña' | translate}}</mat-label>
+        <mat-label>{{'Password' | translate}}</mat-label>
         <input type="password" matInput formControlName="password">
       </mat-form-field>
 
@@ -61,7 +61,7 @@
         <mat-error>{{'Las contraseñas no coinciden' | translate}}</mat-error>
       </ng-container>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">{{'Crear'|translate}}</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">{{'Create'|translate}}</button>
     </form>
   </div>
 </div>

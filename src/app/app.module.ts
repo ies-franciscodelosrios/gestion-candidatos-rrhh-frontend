@@ -42,9 +42,9 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
-
     AppComponent,
     LoginComponent,
     Error404Component,
@@ -60,7 +60,7 @@ import {MatMenuModule} from '@angular/material/menu';
     SwitchLangComponent
   ],
   imports: [
-
+    MatCheckboxModule,
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
