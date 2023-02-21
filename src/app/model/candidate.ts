@@ -6,5 +6,5 @@ export interface Candidate{
     birthdate:Date,
     mail:string,
     password:string
-
+    
 }

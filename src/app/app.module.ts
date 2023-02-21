@@ -42,6 +42,8 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
 
@@ -83,6 +85,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDatepickerModule,
     MatSnackBarModule,
     MatNativeDateModule,
+    MatButtonToggleModule,
+    MatPaginatorModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
