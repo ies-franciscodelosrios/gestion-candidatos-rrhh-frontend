@@ -15,17 +15,23 @@
     "a": "a",
     "introducir": "introducir",
     "Seleccionado": "Seleccionado",
-    "Nombre": "Nombre",
+    "Name": "Nombre",
     "Dni": "Dni",
     "Email": "Email",
-    "Genero": "Género",
-    "Fecha de nacimiento": "Fecha de nacimiento",
+    "Gender": "Género",
+    "Date of Birth": "Fecha de nacimiento",
     "Cargo": "Cargo",
     "Proyecto": "Proyecto",
+    "Title": "Título",
+    "Creation Date": "Fecha de creación",
+    "Deadline": "Fecha de cierre",
+    "New Candidate":"Nuevo Candidato",
+    "Surname":"Apellidos",
+    "Password":"Contraseña",
+    "Create":"Crear"
     "Titulo": "Título",
     "Fecha de creacion": "Fecha de creación",
     "Fecha de cierre": "Fecha de cierre",
     "Candidatos" : "Candidatos",
     "Ofertas de trabajo": "Ofertas de trabajo"
-
 }
