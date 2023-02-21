@@ -43,6 +43,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,6 +85,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDatepickerModule,
     MatSnackBarModule,
     MatNativeDateModule,
+    MatButtonToggleModule,
+    MatPaginatorModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

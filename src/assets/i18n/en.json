@@ -24,5 +24,7 @@
     "Proyecto": "Project",
     "Titulo": "Title",
     "Fecha de creacion": "Creation date",
-    "Fecha de cierre": "Closing date"
+    "Fecha de cierre": "Closing date",
+    "Candidatos" : "Candidates",
+    "Ofertas de trabajo": "Offers of work"
 }

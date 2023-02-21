@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "https://192.168.1.139:7228",
+      "target": "https://172.16.16.100:7228",
       "secure": false,
       "pathRewrite": {
         "^/api": ""

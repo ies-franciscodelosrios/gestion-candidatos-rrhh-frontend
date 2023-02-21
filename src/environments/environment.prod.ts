@@ -1,11 +1,12 @@
 export const environment = {
   production: true,
   api:{
-    url: 'https://172.16.16.104:7228',
+    url: 'https://3.222.198.130:443',
     endpoints:{
       candidateGetAll:'/Candidate/GetAll',
       candidateGetById:'/Candidate/GetById',
-      candidateInsert:'/Candidate/Insert'
+      candidateInsert:'/Candidate/Insert',
+      offerGetAll:'/Offer/GetAll',
     }
   }
 };
