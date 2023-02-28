@@ -16,7 +16,7 @@ export class CreateCandidateComponent implements OnInit {
   constructor(private candidateService: CandidateService, private fb: FormBuilder, private snack: MatSnackBar,
               private translateService:TranslateService){
     this.form = this.fb.group({
-      name: ['', [Validators.required]],
+      name: ['', [Validators.required,Validators.maxLength(30)]],
       surname: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       dni: ['', [Validators.required]],
@@ -34,6 +34,7 @@ export class CreateCandidateComponent implements OnInit {
 
 
    submit() {
+    /*
     const candidate: Candidate = {
       name: this.form.get('name')?.value + ' ' + this.form.get('surname')?.value,
       mail: this.form.get('email')?.value,
@@ -57,7 +58,7 @@ export class CreateCandidateComponent implements OnInit {
         })
     } else {
 
-    }
+    }*/
   }
 
   private checkPasswords(control: AbstractControl): ValidationErrors | null {
@@ -68,7 +69,7 @@ export class CreateCandidateComponent implements OnInit {
 
   private isCandidateValid(candidate: Candidate): boolean {
     console.log(candidate);
-    return candidate.name !== '' && candidate.mail !== '' && candidate.dni !== '' && candidate.birthdate !== null && candidate.password !== '';
+    return candidate.name !== '' /*&& candidate.mail !== '' && candidate.dni !== '' && candidate.birthdate !== null && candidate.password !== ''*/;
   }
 
   private resetForm() {
