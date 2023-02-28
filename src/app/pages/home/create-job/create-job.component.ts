@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 
-interface Office {
+interface Rol {
   value: string;
   viewValue: string;
 }
-interface Project {
+interface Subrol {
   value: string;
   viewValue: string;
 }
-export interface PeriodicElement {
-  name: string;
-  symbol: string;
+interface Localizacion {
+  value: string;
+  viewValue: string;
 }
 export interface Task {
   color: ThemePalette;
@@ -39,10 +39,23 @@ export class CreateJobComponent implements OnInit {
 
   task: Task = {
     color: 'primary',
-
   };
 
 
+export class CreateJobComponent implements OnInit{
+  
+  Roles: Rol[] = [
+    {value: 'Desarrollador', viewValue: 'Desarrollador'},
+    {value: 'QA', viewValue: 'QA'},
+  ];
+  Subroles: Subrol[] = [
+    {value: 'BackEnd', viewValue: 'BackEnd'},
+    {value: 'FrontEnd', viewValue: 'FrontEnd'},
+  ];
+  Localizaciones: Localizacion[] = [
+    {value: 'Barcelona', viewValue: 'Barcelona'},
+    {value: 'Cordoba', viewValue: 'Córdoba'},
+    {value: 'Londres', viewValue: 'Londres'}
   displayedColumns = ['name', 'symbol'];
   dataSource = ELEMENT_DATA;
 
@@ -55,9 +68,10 @@ export class CreateJobComponent implements OnInit {
     { value: 'project-1', viewValue: 'Project2' },
     { value: 'project-2', viewValue: 'Project3' },
   ];
-  constructor(private fb: FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
+  
 
 }

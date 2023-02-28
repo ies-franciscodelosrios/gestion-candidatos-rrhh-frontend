@@ -45,6 +45,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +89,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatNativeDateModule,
     MatButtonToggleModule,
     MatPaginatorModule,
+    MatDialogModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

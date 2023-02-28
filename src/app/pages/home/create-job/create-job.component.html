@@ -1,3 +1,63 @@
+<mat-dialog-content>
+    <div class="completo">
+        <div class="general">
+            <div class="contenedor-1">
+                <mat-form-field class="full-width">
+                    <mat-label>{{'Proyecto' | translate}}</mat-label>
+                    <input type="email" formControlName="email" matInput>
+                    <!-- <ng-container>
+                        <mat-error>{{'Email invalido' | translate}}</mat-error>
+                    </ng-container> -->
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>{{'Numero de Vacantes' | translate}}</mat-label>
+                    <input type="email" formControlName="email" matInput>
+                    <!-- <ng-container>
+                        <mat-error>{{'Email invalido' | translate}}</mat-error>
+                    </ng-container> -->
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>{{'Razón de Apertura' | translate}}</mat-label>
+                    <input type="email" formControlName="email" matInput>
+                    <!-- <ng-container>
+                        <mat-error>{{'Email invalido' | translate}}</mat-error>
+                    </ng-container> -->
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>{{'Área' | translate}}</mat-label>
+                    <input type="email" formControlName="email" matInput>
+                    <!-- <ng-container>
+                        <mat-error>{{'Email invalido' | translate}}</mat-error>
+                    </ng-container> -->
+                </mat-form-field>
+                
+            </div>
+            <div class="contenedor-2">
+                <mat-form-field appearance="fill">
+                    <mat-label>Roles</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let Rol of Roles" [value]="Rol.value">
+                            {{Rol.viewValue}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Subroles</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let Subrol of Subroles" [value]="Subrol.value">
+                            {{Subrol.viewValue}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Localización</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let Localizacion of Localizaciones" [value]="Localizacion.value">
+                            {{Localizacion.viewValue}}
+                          </mat-option>
+                      </mat-select>
+                  </mat-form-field>
+            </div>
 <div class="organizador">
     <div class="distancia">
         <div class="colum1">
@@ -59,10 +119,8 @@
                 </table>
             </div>     
         </div>
-    </div>
-    <section class="centrar">
-        <div class="example-button-row">
-            <button mat-raised-button color="primary">Create</button>
+        <div class="boton">
+            <button mat-raised-button color="primary" type="submit">{{'Crear'|translate}}</button>
         </div>
-    </section>
-</div>
+    </div>
+</mat-dialog-content>
