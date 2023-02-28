@@ -42,13 +42,13 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
-
     AppComponent,
     LoginComponent,
     Error404Component,
@@ -64,7 +64,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     SwitchLangComponent
   ],
   imports: [
-
+    MatCheckboxModule,
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
