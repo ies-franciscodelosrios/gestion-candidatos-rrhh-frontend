@@ -2,7 +2,7 @@
   <h1>{{"Ofertas" | translate}}</h1>
 </mat-toolbar>
 
-<div class="">
+<div>
   <div class="contenedor-1">
     <div class="busqueda">
       <form class="example-form">
@@ -34,7 +34,7 @@
         </form>
       </div>
       <div class="botones-derecha2">
-        <button mat-raised-button color="primary">+ Añadir Posicion</button>
+        <button mat-raised-button color="primary" (click)="abrirPopup()">+ Añadir Posicion</button>
         <mat-icon>autorenew</mat-icon>
         <mat-icon>settings</mat-icon>
       </div>
