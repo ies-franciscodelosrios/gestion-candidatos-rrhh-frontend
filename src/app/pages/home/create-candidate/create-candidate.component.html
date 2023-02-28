@@ -6,7 +6,8 @@
     <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
       <mat-form-field class="full-width">
         <mat-label>{{'Name' | translate}}</mat-label>
-        <input matInput type="text" formControlName="name">
+        <input matInput type="text" formControlName="name" maxlength="30" #nameField>
+        <mat-hint align="end">{{nameField.value.length}}/30</mat-hint>
       </mat-form-field>
       <mat-form-field class="full-width">
         <mat-label>{{'Surname' | translate}}</mat-label>
