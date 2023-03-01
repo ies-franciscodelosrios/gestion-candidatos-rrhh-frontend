@@ -11,12 +11,12 @@ import { CandidatesOverviewComponent } from './candidates-overview/candidates-ov
 
 const routes: Routes = [
   {path: '', component: HomeComponent, children: [
-      {path: '', redirectTo: 'newCandidate', pathMatch: 'full'},
+      {path: '', redirectTo: 'main', pathMatch: 'full'},
       {path: 'main', component: MainComponent},
       {path: 'jobs', component: JobsOverviewComponent},
       {path: 'candidates', component: CandidatesOverviewComponent},
       {path: 'newJob', component: CreateJobComponent},
-      {path: 'newCandidate', component: CreateCandidateComponent},
+      {path: 'newCandidate', component: CreateCandidateComponent,data: { breadcrumb: 'Nuevo Candidatos' }},
       {path: 'jobs/:id', component: JobComponent},
       {path: 'candidates/:id', component: CandidateComponent}
   ]}

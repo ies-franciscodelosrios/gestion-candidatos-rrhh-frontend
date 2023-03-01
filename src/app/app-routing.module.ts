@@ -12,10 +12,12 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+    data: { breadcrumb: 'Inicio' }
   },
   {
     path: 'login',
     component: LoginComponent,
+    data: { breadcrumb: 'Inicio de Sesión' }
   },
   {
     path: '**',
