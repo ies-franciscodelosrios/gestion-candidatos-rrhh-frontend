@@ -28,10 +28,10 @@
     "New Candidate":"Nuevo Candidato",
     "Surname":"Apellidos",
     "Password":"Contraseña",
-    "Create":"Crear"
-    "Titulo": "Título",
+    "Create":"Crear",
     "Fecha de creacion": "Fecha de creación",
     "Fecha de cierre": "Fecha de cierre",
     "Candidatos" : "Candidatos",
-    "Ofertas de trabajo": "Ofertas de trabajo"
+    "Ofertas de trabajo": "Ofertas de trabajo",
+    "Interview date" : "Fecha de la entrevista"
 }

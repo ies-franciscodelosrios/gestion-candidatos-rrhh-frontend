@@ -23,7 +23,11 @@ export class CreateCandidateComponent implements OnInit {
       date: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(5)]],
       confirmPassword: ['', [Validators.required]],
-      gender: ['', [Validators.required]]
+      gender: ['', [Validators.required]],
+      dateG: ['', [Validators.required]],
+      dateC: ['', [Validators.required]],
+      dateT: ['', [Validators.required]],
+      dateF: ['', [Validators.required]]
     }, {validators: this.checkPasswords});
   }
 

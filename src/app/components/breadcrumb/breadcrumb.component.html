@@ -1,6 +1,6 @@
 <div style="padding:20px">
 <ng-container *ngFor="let breadcrumb of breadcrumbs, let i = index">
-    <a [routerLink]="breadcrumb.path">{{ breadcrumb.label }} </a>
+    <a class="click sobre" [routerLink]="breadcrumb.path">{{ breadcrumb.label }} </a>
     <span *ngIf="i<breadcrumbs.length-1" style="padding:0px 3px"> / </span>
 </ng-container>
 </div>

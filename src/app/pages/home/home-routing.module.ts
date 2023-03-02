@@ -12,13 +12,13 @@ import { CandidatesOverviewComponent } from './candidates-overview/candidates-ov
 const routes: Routes = [
   {path: '', component: HomeComponent, children: [
       {path: '', redirectTo: 'main', pathMatch: 'full'},
-      {path: 'main', component: MainComponent},
-      {path: 'jobs', component: JobsOverviewComponent},
-      {path: 'candidates', component: CandidatesOverviewComponent},
-      {path: 'newJob', component: CreateJobComponent},
-      {path: 'newCandidate', component: CreateCandidateComponent,data: { breadcrumb: 'Nuevo Candidatos' }},
-      {path: 'jobs/:id', component: JobComponent},
-      {path: 'candidates/:id', component: CandidateComponent}
+      {path: 'main', component: MainComponent,data: { breadcrumb: 'Main'}},
+      {path: 'jobs', component: JobsOverviewComponent,data: { breadcrumb: 'Ofert'}},
+      {path: 'candidates', component: CandidatesOverviewComponent,data: { breadcrumb: 'Candidates' }},
+      {path: 'newJob', component: CreateJobComponent,data: { breadcrumb: 'New Job' }},
+      {path: 'newCandidate', component: CreateCandidateComponent,data: { breadcrumb: 'New Candidate' }},
+      {path: 'jobs/:id', component: JobComponent,data: { breadcrumb: 'Jobs' }},
+      {path: 'candidates/:id', component: CandidateComponent,data: { breadcrumb: 'Candidates' }}
   ]}
 ];
 @NgModule({

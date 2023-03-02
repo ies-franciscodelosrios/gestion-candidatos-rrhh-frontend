@@ -1,69 +1,90 @@
 <mat-toolbar>
   <app-breadcrumb></app-breadcrumb>
-  <span>{{'New Candidate' | translate}}</span>
+  <!--<span>{{'New Candidate' | translate}}</span>-->
 </mat-toolbar>
-<div class="contenedor-principal">
-  <div class="contenedor-1">
-    <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-      <mat-form-field class="full-width">
-        <mat-label>{{'Name' | translate}}</mat-label>
-        <input matInput type="text" formControlName="name" maxlength="30" #nameField>
-        <mat-hint align="end">{{nameField.value.length}}/30</mat-hint>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>{{'Surname' | translate}}</mat-label>
-        <input type="text" formControlName="surname" matInput>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>{{'Email' | translate}}</mat-label>
-        <input type="email" formControlName="email" matInput>
-        <ng-container *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
-          <mat-error>{{'Email invalido' | translate}}</mat-error>
-        </ng-container>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>{{'Dni' | translate}}</mat-label>
-        <input type="text" formControlName="dni" matInput>
-      </mat-form-field>
-
-      <div class="fechaGenero">
-        <mat-form-field appearance="fill">
-          <mat-label>{{"Date of Birth" | translate}}</mat-label>
-          <input formControlName="date" matInput [matDatepicker]="picker">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+<form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="container">
+      <div class="column1">
+        <mat-form-field class="full-width">
+          <mat-label>{{'Name' | translate}}</mat-label>
+          <input matInput type="text" formControlName="name" maxlength="30" #nameField>
+          <mat-hint align="end">{{nameField.value.length}}/30</mat-hint>
         </mat-form-field>
 
+        <mat-form-field class="full-width">
+          <mat-label>{{'Surname' | translate}}</mat-label>
+          <input type="text" formControlName="surname" matInput>
+        </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>{{'Sexo'| translate}}</mat-label>
-          <mat-select formControlName="gender">
-            <mat-option value="mujer">{{'Mujer'|translate}}</mat-option>
-            <mat-option value="hombre">{{'Hombre'|translate}}</mat-option>
-          </mat-select>
+        <mat-form-field class="full-width">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>Motivo de rechazo</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+          <mat-label>{{'Email' | translate}}</mat-label>
+          <input type="email" formControlName="email" matInput>
+          <ng-container *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+            <mat-error>{{'Email invalido' | translate}}</mat-error>
+          </ng-container>
         </mat-form-field>
       </div>
 
-      <mat-form-field class="full-width">
-        <mat-label>{{'Password' | translate}}</mat-label>
-        <input type="password" matInput formControlName="password">
-      </mat-form-field>
+      <div class="column2">
 
-      <ng-container *ngIf="form.get('password')?.hasError('minlength')">
-        <mat-error>{{'La contraseña debe tener al menos 5 caracteres' | translate}}</mat-error>
-      </ng-container>
+        <mat-form-field appearance="fill" class="date">
+          <mat-label>First contact date</mat-label>
+          <input matInput [matDatepicker]="picker5" formControlName="dateF">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+          <mat-datepicker #picker5></mat-datepicker>
+        </mat-form-field>
 
-      <mat-form-field class="full-width">
-        <mat-label>{{'Confirme contraseña' | translate}}</mat-label>
-        <input type="password" matInput formControlName="confirmPassword">
-      </mat-form-field>
+        <mat-form-field appearance="fill" class="date">
+          <mat-label>Status</mat-label>
+          <mat-select>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <ng-container *ngIf="form.errors?.['notSame']">
-        <mat-error>{{'Las contraseñas no coinciden' | translate}}</mat-error>
-      </ng-container>
+        <mat-form-field appearance="fill" class="date">
+          <mat-label>Hiring date</mat-label>
+          <input matInput [matDatepicker]="picker4" formControlName="dateC">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+          <mat-datepicker #picker4></mat-datepicker>
+        </mat-form-field>
 
-      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">{{'Create'|translate}}</button>
-    </form>
+        <mat-form-field appearance="fill" class="date">
+          <mat-label>Technical test date</mat-label>
+          <input matInput [matDatepicker]="picker3" formControlName="dateT">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+          <mat-datepicker #picker3></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="date">
+          <mat-label>{{'Interview date' | translate}}</mat-label>
+          <input matInput [matDatepicker]="picker1" formControlName="dateG">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="date">
+          <mat-label>Curriculum vitae date</mat-label>
+          <input matInput [matDatepicker]="picker2" formControlName="dateC">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+    </div>
   </div>
-</div>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="full-width" cla>{{'Create'|translate}}</button>
+</form>
