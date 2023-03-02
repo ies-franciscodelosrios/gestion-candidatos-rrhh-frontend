@@ -3,88 +3,89 @@
   <!--<span>{{'New Candidate' | translate}}</span>-->
 </mat-toolbar>
 <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
-    <div class="container">
-      <div class="column1">
-        <mat-form-field class="full-width">
-          <mat-label>{{'Name' | translate}}</mat-label>
-          <input matInput type="text" formControlName="name" maxlength="30" #nameField>
-          <mat-hint align="end">{{nameField.value.length}}/30</mat-hint>
-        </mat-form-field>
+  <div class="container">
+    <div class="column1">
+      <mat-form-field class="full-width">
+        <mat-label>{{'Name' | translate}}</mat-label>
+        <input matInput type="text" formControlName="name" maxlength="30" #nameField>
+        <mat-hint align="end">{{nameField.value.length}}/30</mat-hint>
+      </mat-form-field>
 
-        <mat-form-field class="full-width">
-          <mat-label>{{'Surname' | translate}}</mat-label>
-          <input type="text" formControlName="surname" matInput>
-        </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Surnames' | translate}}</mat-label>
+        <input type="text" formControlName="surname" matInput>
+      </mat-form-field>
 
-        <mat-form-field class="full-width">
-          <mat-label>Descripción</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Description'|translate}}</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
 
-        <mat-form-field class="full-width">
-          <mat-label>Motivo de rechazo</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Reason for rejection'|translate}}</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
 
-        <mat-form-field class="full-width">
-          <mat-label>{{'Email' | translate}}</mat-label>
-          <input type="email" formControlName="email" matInput>
-          <ng-container *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
-            <mat-error>{{'Email invalido' | translate}}</mat-error>
-          </ng-container>
-        </mat-form-field>
-      </div>
+      <mat-form-field class="full-width">
+        <mat-label>{{'Email' | translate}}</mat-label>
+        <input type="email" formControlName="email" matInput>
+        <ng-container *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+          <mat-error>{{'Email invalido' | translate}}</mat-error>
+        </ng-container>
+      </mat-form-field>
+    </div>
 
-      <div class="column2">
+    <div class="column2">
 
-        <mat-form-field appearance="fill" class="date">
-          <mat-label>First contact date</mat-label>
-          <input matInput [matDatepicker]="picker5" formControlName="dateF">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
-          <mat-datepicker #picker5></mat-datepicker>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="date">
+        <mat-label>{{'First contact date'|translate}}</mat-label>
+        <input matInput [matDatepicker]="picker5" formControlName="dateF">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+        <mat-datepicker #picker5></mat-datepicker>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="date">
-          <mat-label>Status</mat-label>
-          <mat-select>
-            <mat-option value="one">First option</mat-option>
-            <mat-option value="two">Second option</mat-option>
-          </mat-select>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="date">
+        <mat-label>{{'Status'|translate}}</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="date">
-          <mat-label>Hiring date</mat-label>
-          <input matInput [matDatepicker]="picker4" formControlName="dateC">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
-          <mat-datepicker #picker4></mat-datepicker>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="date">
+        <mat-label>{{'Hiring date'|translate}}</mat-label>
+        <input matInput [matDatepicker]="picker4" formControlName="dateC">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+        <mat-datepicker #picker4></mat-datepicker>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="date">
-          <mat-label>Technical test date</mat-label>
-          <input matInput [matDatepicker]="picker3" formControlName="dateT">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-          <mat-datepicker #picker3></mat-datepicker>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="date">
+        <mat-label>{{'Technical test date'|translate}}</mat-label>
+        <input matInput [matDatepicker]="picker3" formControlName="dateT">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="date">
-          <mat-label>{{'Interview date' | translate}}</mat-label>
-          <input matInput [matDatepicker]="picker1" formControlName="dateG">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-          <mat-datepicker #picker1></mat-datepicker>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="date">
+        <mat-label>{{'Interview date' | translate}}</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="dateG">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
 
-        <mat-form-field appearance="fill" class="date">
-          <mat-label>Curriculum vitae date</mat-label>
-          <input matInput [matDatepicker]="picker2" formControlName="dateC">
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-          <mat-datepicker #picker2></mat-datepicker>
-        </mat-form-field>
+      <mat-form-field appearance="fill" class="date">
+        <mat-label>{{'Curriculum vitae date'|translate}}</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="dateC">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
     </div>
   </div>
-  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="full-width" cla>{{'Create'|translate}}</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="full-width"
+    cla>{{'Create'|translate}}</button>
 </form>
