@@ -46,6 +46,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CandidatesOverviewComponent,
     CreateJobComponent,
     CreateCandidateComponent,
-    SwitchLangComponent
+    SwitchLangComponent,
+    BreadcrumbComponent
   ],
   imports: [
     MatCheckboxModule,

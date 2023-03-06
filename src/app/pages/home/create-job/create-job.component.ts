@@ -12,7 +12,6 @@ import {RolStatus} from "../../../model/enums/RolStatus";
   styleUrls: ['./create-job.component.scss']
 })
 export class CreateJobComponent implements OnInit {
-
   constructor(private fb: FormBuilder, private translateService:TranslateService){
     this.form = this.fb.group({
       project: ['', [Validators.required, Validators.maxLength(30)]],

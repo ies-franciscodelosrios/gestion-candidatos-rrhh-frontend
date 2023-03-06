@@ -1,10 +1,37 @@
 {
+    "__commentHome__": "Parte del Home --> ",
+
     "Candidates": "Candidatos",
-    "Show": "mostrar",
     "Roles": "Roles",
-    "Candidato": "Candidato",
     "Create Candidate": "Nuevo Candidato",
     "Create Role": "Nuevo rol",
+
+    "__commentCandidates__": "Parte de candidates --> ",
+
+    "Add Candidate":"Agregar Candidato",
+    "Candidates in process":"Candidatos en proceso",
+    "Other Candidates":"Otros Candidatos",
+    "Name": "Nombre",
+    "Dni": "Dni",
+    "Gender": "Género",
+    "Date of Birth": "Fecha de nacimiento",
+    "Email": "Email",
+
+    "__commentCreateCandidate__": "Parte de Create Candidate --> ",
+
+    "Surnames":"Apellidos",
+    "Description":"Descripción",
+    "Reason for rejection":"Motivo de rechazo",
+    "First contact date":"Primera fecha de contacto",
+    "Status":"Estado",
+    "Hiring date":"Fecha de contratación",
+    "Technical test date":"Fecha de la prueba técnica",
+    "Interview date" : "Fecha de la entrevista",
+    "Curriculum vitae date":"Fecha Curriculum vitae",
+    "Create":"Crear",
+
+    "__commentOther__": "Other --> ",
+
     "Ofices and Projects": "Oficinas y Proyectos",
     "Applicatión": "Solicitud",
     "Descripcion": "Descripción",
@@ -15,23 +42,29 @@
     "a": "a",
     "introducir": "introducir",
     "Seleccionado": "Seleccionado",
-    "Name": "Nombre",
-    "Dni": "Dni",
-    "Email": "Email",
-    "Gender": "Género",
-    "Date of Birth": "Fecha de nacimiento",
     "Cargo": "Cargo",
     "Proyecto": "Proyecto",
     "Title": "Título",
     "Creation Date": "Fecha de creación",
     "Deadline": "Fecha de cierre",
     "New Candidate":"Nuevo Candidato",
-    "Surname":"Apellidos",
     "Password":"Contraseña",
-    "Create":"Crear"
-    "Titulo": "Título",
-    "Fecha de creacion": "Fecha de creación",
-    "Fecha de cierre": "Fecha de cierre",
+    "Creation date": "Fecha de creación",
+    "Closing date": "Fecha de cierre",
     "Candidatos" : "Candidatos",
-    "Ofertas de trabajo": "Ofertas de trabajo"
+    "Ofertas de trabajo": "Ofertas de trabajo",
+ 
+
+    "__commentRoles__": "Parte de Roles --> ",
+
+    "Search by Name":"Busqueda por Nombre",
+    "Search":"Buscar",
+    "Reset":"Reiniciar",
+    "More Filters":"Más Filtros",
+    "Show":"Mostrar",
+    "Open positions":"Posiciones abiertas",
+    "Covered positions":"Posiciones cubiertas",
+    "Add position":"Añadir Posicion",
+    "Project":"Projectos"
+
 }
