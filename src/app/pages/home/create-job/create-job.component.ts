@@ -7,12 +7,14 @@ import {Localization} from "../../../model/enums/Localization";
 import {RolStatus} from "../../../model/enums/RolStatus";
 import {Job} from "../../../model/job";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {StateService} from "../../../services/state.service";
 
 @Component({
   selector: 'app-create-job', templateUrl: './create-job.component.html', styleUrls: ['./create-job.component.scss']
 })
 export class CreateJobComponent implements OnInit {
-  constructor(private fb: FormBuilder, private translateService: TranslateService,private snack: MatSnackBar) {
+  constructor(private fb: FormBuilder, private translateService: TranslateService,private snack: MatSnackBar,
+              private stateService: StateService) {
     this.form = this.fb.group({
       project: ['', [Validators.required, Validators.maxLength(30)]],
       area: ['', [Validators.required, Validators.maxLength(20)]],
@@ -55,7 +57,7 @@ export class CreateJobComponent implements OnInit {
       vacancies: this.form.get('vacancies')?.value
     }
 
-    if (this.isJobValid(Job)) {
+    if (this.stateService.isNewJob) {
       console.log(Job);
       this.snack.open('Candidato creado correctamente', 'Ok', {duration: 5000});
     }else{
@@ -63,7 +65,7 @@ export class CreateJobComponent implements OnInit {
     }
   }
 
-  private isJobValid(job: Job): boolean {
+  private isNewJobValid(job: Job): boolean {
     return job.area !== undefined && job.area !== ''
       && job.closing_date !== undefined && job.creation_date !== undefined
       && job.localization !== undefined && job.proyect !== undefined
