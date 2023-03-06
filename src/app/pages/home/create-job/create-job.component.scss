@@ -29,48 +29,16 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  align-content: center;
+}
 
-  #roles {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
-  }
-
-  #dates {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
-  }
-
-  #localStatus {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
-  }
-
-  #projectArea {
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-    mat-form-field{
-      width: 45%;
-    }
-  }
-
-  #vacancies{
-    width: 15%;
-    mat-form-field{
-      width: 30%;
-    }
-  }
-  #motive{
-    width: 40%;
-    mat-form-field{
-      width: 100%;
-      textarea{
-        height: 20vh;
-      }
-    }
+.select{
+  width:15%;
+  display: flex;
+  justify-content: center;
+  mat-form-field{
+    width:90%;
   }
 }
+
 
