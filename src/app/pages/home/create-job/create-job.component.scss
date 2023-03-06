@@ -27,18 +27,34 @@
 .bottom {
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items:baseline;
   flex-wrap: wrap;
-  align-content: center;
-}
-
-.select{
-  width:15%;
-  display: flex;
-  justify-content: center;
-  mat-form-field{
-    width:90%;
+  column-gap: 30px;
+  row-gap: 50px;
+  .vacancies {
+    width:5em!important;
+  }
+  .project{
+    width: 20em!important;
+  }
+  .area{
+    width:20em!important;
+  }
+  .motive{
+    width: 20em!important;
+    textarea{
+      height: 5em!important;
+    }
   }
 }
+
+@media(max-width: 660px) {
+  .bottom {
+    justify-content: center;
+  }
+}
+
+
 
 
