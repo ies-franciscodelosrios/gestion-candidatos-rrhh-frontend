@@ -1,5 +1,3 @@
-import {Rol} from "./enums/Rol";
-import {SubRol} from "./enums/SubRol";
 import {CandidateStatus} from "./enums/CandidateStatus";
 import {ContactMethod} from "./enums/ContactMethod";
 import {Job} from "./job";

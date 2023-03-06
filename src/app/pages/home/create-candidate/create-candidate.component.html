@@ -5,8 +5,11 @@
 <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
   <div class="container">
     <div class="column1">
+
       <mat-form-field >
         <mat-label>{{'Name' | translate}}</mat-label>
+      <mat-form-field class="full-width">
+         <mat-label>{{'Name' | translate}}</mat-label>
         <input matInput type="text" formControlName="name" maxlength="30" #nameField>
         <mat-hint align="end">{{nameField.value.length}}/30</mat-hint>
       </mat-form-field>
