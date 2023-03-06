@@ -1,0 +1,97 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="main-container">
+    <div class="top">
+      <span>{{"Resumen de la posicion"|translate}}</span>
+      <button mat-raised-button color="primary">{{buttonMessage|translate}}</button>
+    </div>
+    <div class="bottom">
+      <div>
+        <mat-form-field>
+          <mat-label>{{"Proyecto"|translate}}</mat-label>
+          <input matInput type="text" formControlName="project" maxlength="30" #projectField>
+          <mat-hint align="end">{{projectField.value.length}}/30</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>{{"Area"|translate}}</mat-label>
+          <input matInput type="text" formControlName="area" maxlength="20" #areaField>
+          <mat-hint align="end">{{areaField.value.length}}/20</mat-hint>
+        </mat-form-field>
+      </div>
+
+
+      <div>
+        <mat-form-field>
+          <mat-label>{{"Motivo de apertura"|translate}}</mat-label>
+          <textarea matInput type="text" formControlName="motive" maxlength="250" #motiveField></textarea>
+          <mat-hint align="end">{{motiveField.value.length}}/250</mat-hint>
+        </mat-form-field>
+      </div>
+
+      <div >
+        <mat-form-field>
+          <mat-label>{{"Numero de vacantes"|translate}}</mat-label>
+          <input matInput type="number" formControlName="vacancies" min="1">
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>{{"Fecha de apertura"|translate}}</mat-label>
+          <input matInput [matDatepicker]="openingPicker" formControlName="openingDate">
+          <mat-datepicker-toggle matSuffix [for]="openingPicker"></mat-datepicker-toggle>
+          <mat-datepicker #openingPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field>
+          <mat-label>{{"Fecha de cierre"|translate}}</mat-label>
+          <input matInput [matDatepicker]="closingPicker" formControlName="closingDate">
+          <mat-datepicker-toggle matSuffix [for]="closingPicker"></mat-datepicker-toggle>
+          <mat-datepicker #closingPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="select">
+        <mat-form-field>
+          <mat-label>{{"Rol"|translate}}</mat-label>
+          <mat-select formControlName="rol">
+            <mat-option *ngFor="let rol of rolValues" [value]="rol">{{rol|translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="select">
+        <mat-form-field>
+          <mat-label>{{"SubRol"|translate}}</mat-label>
+          <mat-select formControlName="subRol">
+            <mat-option *ngFor="let subRol of subRolValues" [value]="subRol">{{subRol|translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="select">
+        <mat-form-field>
+          <mat-label>{{"Localization"|translate}}</mat-label>
+          <mat-select formControlName="localization">
+            <mat-option *ngFor="let localization of localizationValues"
+                        [value]="localization">{{localization|translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="select">
+        <mat-form-field>
+          <mat-label>{{"Status"|translate}}</mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of statusValues" [value]="status">{{status|translate}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</form>
+
