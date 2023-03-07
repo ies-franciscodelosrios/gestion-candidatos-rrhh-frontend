@@ -47,6 +47,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import {StateService} from "./services/state.service";
 
 @NgModule({
   declarations: [
@@ -103,7 +104,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
     HomeRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
