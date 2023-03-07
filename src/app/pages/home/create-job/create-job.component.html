@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="submit()">
+<form [formGroup]="form" (ngSubmit)="submit()" *ngIf="(this.stateS.state | async).form != 'none'">
   <div class="main-container">
     <div class="top">
       <span>{{"Resumen de la posicion"|translate}}</span>
@@ -34,7 +34,7 @@
           <mat-datepicker #openingPicker></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field *ngIf="(this.stateS.state | async).form != 'create'">
           <mat-label>{{"Fecha de cierre"|translate}}</mat-label>
           <input matInput [matDatepicker]="closingPicker" formControlName="closingDate">
           <mat-datepicker-toggle matSuffix [for]="closingPicker"></mat-datepicker-toggle>
@@ -63,7 +63,7 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field *ngIf="(this.stateS.state | async).form != 'create'">
           <mat-label>{{"Status"|translate}}</mat-label>
           <mat-select formControlName="status">
             <mat-option *ngFor="let status of statusValues" [value]="status">{{status|translate}}</mat-option>

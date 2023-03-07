@@ -14,19 +14,23 @@ import {StateService} from "../../../services/state.service";
 })
 export class CreateJobComponent implements OnInit {
   constructor(private fb: FormBuilder, private translateService: TranslateService,private snack: MatSnackBar,
-              private stateService: StateService) {
+              public stateS: StateService) {
     this.form = this.fb.group({
       project: ['', [Validators.required, Validators.maxLength(30)]],
       area: ['', [Validators.required, Validators.maxLength(20)]],
       motive: ['', [Validators.required, Validators.maxLength(250)]],
       vacancies: ['1', [Validators.required, Validators.min(1)]],
-      closingDate: ['', []],
+      closingDate: ['', []],  //*   sacarlos y addControl manual según estado.
       openingDate: [new Date(), [Validators.required]],
       rol: ['', [Validators.required]],
       subRol: ['', [Validators.required]],
       localization: ['', [Validators.required]],
-      status: ['', [Validators.required]],
+      status: ['', [Validators.required]],  //*
     });
+
+    this.stateS.state.subscribe(status=>{
+      console.log(status)
+    })
   }
 
   buttonMessageValues: string[] = ['Guardar', 'Editar'];
@@ -57,12 +61,12 @@ export class CreateJobComponent implements OnInit {
       vacancies: this.form.get('vacancies')?.value
     }
 
-    if (this.stateService.isNewJob) {
+    /*if (this.stateService.isNewJob) {
       console.log(Job);
       this.snack.open('Candidato creado correctamente', 'Ok', {duration: 5000});
     }else{
       this.snack.open('Error al crear el candidato', 'Ok', {duration: 5000});
-    }
+    }*/
   }
 
   private isNewJobValid(job: Job): boolean {
