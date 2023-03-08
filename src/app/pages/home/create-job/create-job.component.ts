@@ -8,13 +8,15 @@ import {RolStatus} from "../../../model/enums/RolStatus";
 import {Job} from "../../../model/job";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {StateService} from "../../../services/state.service";
+import {JobService} from "../../../services/api/job.service";
+import {firstValueFrom} from "rxjs";
 
 @Component({
   selector: 'app-create-job', templateUrl: './create-job.component.html', styleUrls: ['./create-job.component.scss']
 })
 export class CreateJobComponent implements OnInit {
   constructor(private fb: FormBuilder, private translateService: TranslateService,private snack: MatSnackBar,
-              public stateS: StateService) {
+              public stateS: StateService, private jobs: JobService) {
     this.form = this.fb.group({
       project: ['', [Validators.required, Validators.maxLength(30)]],
       area: ['', [Validators.required, Validators.maxLength(20)]],
@@ -48,32 +50,30 @@ export class CreateJobComponent implements OnInit {
     const Job: Job = {
       area: this.form.get('area')?.value,
       candidates: [],
-      closing_date: this.form.get('closingDate')?.value,
-      creation_date: this.form.get('openingDate')?.value,
+      closeDate: new Date(this.form.get('closingDate')?.value.toLocaleDateString()),
+      creationDate: new Date(this.form.get('openingDate')?.value.toLocaleDateString()),
       description: this.form.get('motive')?.value,
       id: 0,
       last_update: new Date(),
       localization: this.form.get('localization')?.value,
-      proyect: this.form.get('project')?.value,
+      project: this.form.get('project')?.value,
       rol: this.form.get('rol')?.value,
       status: this.form.get('status')?.value,
-      sub_rol: this.form.get('subRol')?.value,
+      subRol: this.form.get('subRol')?.value,
       vacancies: this.form.get('vacancies')?.value
     }
 
-    /*if (this.stateService.isNewJob) {
-      console.log(Job);
-      this.snack.open('Candidato creado correctamente', 'Ok', {duration: 5000});
-    }else{
-      this.snack.open('Error al crear el candidato', 'Ok', {duration: 5000});
-    }*/
-  }
+    console.log(Job)
+    firstValueFrom(this.jobs.insert(Job)).then(response => {
+      if (response) {
+        this.snack.open('Oferta creada correctamente', 'Ok', {duration: 5000});
+      } else {
+        this.snack.open('Error al crear la oferta', 'Ok', {duration: 5000});
+      }
+    })
+      .catch(async error => {
+        this.snack.open(await firstValueFrom(this.translateService.get("Error en la peticion")), 'Ok', {duration: 5000});
+      })
 
-  private isNewJobValid(job: Job): boolean {
-    return job.area !== undefined && job.area !== ''
-      && job.closing_date !== undefined && job.creation_date !== undefined
-      && job.localization !== undefined && job.proyect !== undefined
-      && job.proyect !== '' && job.rol !== undefined && job.status !== undefined
-      && job.sub_rol !== undefined && job.vacancies !== undefined && job.vacancies > 0;
   }
 }
