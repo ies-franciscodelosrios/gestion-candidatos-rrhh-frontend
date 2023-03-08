@@ -16,6 +16,6 @@ export interface Candidate{
   technical_test_date:Date,//+
   hiring_date:Date,//+
   first_contact_date:Date,//+
-  //job:Job //no poner por ahora
+  job:Job //no poner por ahora
 
 }

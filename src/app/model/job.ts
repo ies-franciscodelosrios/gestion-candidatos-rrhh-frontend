@@ -17,6 +17,6 @@ export interface Job{
   closing_date:Date,
   creation_date:Date,
   last_update:Date,
-  candidates : Candidate[]
+  candidates? : Candidate[]
 
 }
