@@ -5,6 +5,7 @@ import { Job } from 'src/app/model/job';
 import { JobService } from 'src/app/services/api/job.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateJobComponent } from '../create-job/create-job.component';
+import { Localization } from 'src/app/model/enums/Localization';
 
 @Component({
   selector: 'app-jobs-overview',
@@ -14,7 +15,8 @@ import { CreateJobComponent } from '../create-job/create-job.component';
 export class JobsOverviewComponent implements OnInit {
   @ViewChild('paginator') paginator: MatPaginator;
   offers: Job[] = [];
-  displayedColumns: string[] = ['tittle', 'office', 'project', 'creation_Date', 'close_Date'];
+  Localization = Localization;
+  displayedColumns: string[] = ['project', 'area', 'localization', 'creationDate', 'closeDate'];
   dataSource: MatTableDataSource<Job>;
   constructor(public jobService: JobService, public dialog : MatDialog) { }
 
@@ -29,7 +31,6 @@ export class JobsOverviewComponent implements OnInit {
       });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Resultado: ${result}`);
-      
     });
   }
 
@@ -37,11 +38,23 @@ export class JobsOverviewComponent implements OnInit {
   public GetAllOffers(){
     this.jobService.getAll().subscribe(offer => {
       this.offers = offer;
+      console.log(this.offers[0].localization);
       this.dataSource = new MatTableDataSource(this.offers);
       this.dataSource.paginator = this.paginator;
     });
   }
   public formatBirthdate(date: string) {
     return new Date(date).toLocaleDateString();
+  }
+  public getEnumValueFromOrder(order:number,myEnum: any): string {
+    if(order<0 || order>myEnum.length-1) return "";
+    let i=0;
+    for(let key in myEnum) {
+      if (i==order){
+        return myEnum[key]
+      }
+      i++;
+    }
+    return myEnum[order];
   }
 }

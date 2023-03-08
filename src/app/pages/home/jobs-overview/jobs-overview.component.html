@@ -43,29 +43,29 @@
     <div class="contenedor-tabla">
       <table mat-table [dataSource]="dataSource">
 
-        <ng-container matColumnDef="tittle">
-          <th mat-header-cell *matHeaderCellDef> {{"Title" | translate}} </th>
-          <td mat-cell *matCellDef="let element"> {{element.tittle}} </td>
-        </ng-container>
-
-        <ng-container matColumnDef="office">
-          <th mat-header-cell *matHeaderCellDef> {{"Roles" | translate}} </th>
-          <td mat-cell *matCellDef="let element"> {{element.office}} </td>
-        </ng-container>
-
         <ng-container matColumnDef="project">
-          <th mat-header-cell *matHeaderCellDef> {{"Project" | translate}} </th>
+          <th mat-header-cell *matHeaderCellDef> {{"Proyecto" | translate}} </th>
           <td mat-cell *matCellDef="let element"> {{element.project}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="creation_Date">
-          <th mat-header-cell *matHeaderCellDef> {{"Creation date" | translate}} </th>
-          <td mat-cell *matCellDef="let element"> {{formatBirthdate(element.creation_Date)}} </td>
+        <ng-container matColumnDef="area">
+          <th mat-header-cell *matHeaderCellDef> {{"Area" | translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{element.area}} </td>
         </ng-container>
 
-        <ng-container matColumnDef="close_Date">
+        <ng-container matColumnDef="localization">
+          <th mat-header-cell *matHeaderCellDef> {{"Localization" | translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{getEnumValueFromOrder(element.localization,Localization)}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="creationDate">
+          <th mat-header-cell *matHeaderCellDef> {{"Creation date" | translate}} </th>
+          <td mat-cell *matCellDef="let element"> {{formatBirthdate(element.creationDate)}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="closeDate">
           <th mat-header-cell *matHeaderCellDef> {{"Closing date" | translate}} </th>
-          <td mat-cell *matCellDef="let element"> {{formatBirthdate(element.close_Date)}} </td>
+          <td mat-cell *matCellDef="let element"> {{formatBirthdate(element.closeDate)}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
