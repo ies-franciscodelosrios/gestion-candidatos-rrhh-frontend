@@ -30,8 +30,12 @@ mat-sidenav-container {
 }
 h1{
   font-family: 'ProtaStandard';
-  
+  cursor: pointer;
 }
+h1:hover{
+  text-decoration: underline;
+}
+
 .mat-toolbar.mat-primary {
   background: $navy-blue-90 !important;
 }

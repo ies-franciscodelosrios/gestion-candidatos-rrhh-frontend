@@ -38,7 +38,7 @@ import {SwitchLangComponent} from "./components/switch-lang/switch-lang.componen
 import {HomeRoutingModule} from "./pages/home/home-routing.module";
 import { MatSelectModule } from '@angular/material/select';
 import {CommonModule} from "@angular/common";
-import {MatNativeDateModule} from "@angular/material/core";
+import {MAT_DATE_LOCALE, MatNativeDateModule} from "@angular/material/core";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
@@ -104,7 +104,8 @@ import {StateService} from "./services/state.service";
     HomeRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [StateService],
+  providers: [StateService,
+    {provide: MAT_DATE_LOCALE, useValue: 'es'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

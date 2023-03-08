@@ -6,16 +6,16 @@ import {Candidate} from "./candidate";
 
 export interface Job{
   id?: number,
-  proyect: string,
+  project: string,
   area: string,
-  rol:Rol,
-  sub_rol:SubRol,
-  localization:Localization,
+  rol:Rol | number,
+  subRol:SubRol | number,
+  localization:Localization | number,
   description:string,
-  status:RolStatus,
+  status:RolStatus | number,
   vacancies:number,
-  closing_date:Date,
-  creation_date:Date,
+  closeDate:Date,
+  creationDate:Date,
   last_update:Date,
   candidates? : Candidate[]
 

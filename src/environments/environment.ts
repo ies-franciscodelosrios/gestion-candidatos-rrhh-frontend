@@ -10,7 +10,11 @@ export const environment = {
       candidateGetAll:'/Candidate/GetAll',
       candidateGetById:'/Candidate/GetById',
       candidateInsert:'/Candidate/Insert',
-      offerGetAll:'/Offer/GetAll',
+      candidateUpdate:'/Candidate/Update',
+      rolInsert:'/Rol/Insert',
+      rolGetAll:'/Rol/GetAll',
+      rolGetById:'/Rol/GetById',
+      rolUpdate:'/Rol/Update',
     }
   }
 };
