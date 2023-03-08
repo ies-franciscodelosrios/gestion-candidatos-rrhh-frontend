@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StateService} from "../../services/state.service";
 
 
 
@@ -11,8 +12,10 @@ export class HomeComponent implements OnInit {
   mostrar: Boolean=false;
   mensaje: String="Innovation Group";
   mensaje_enlace:String ="Mostrar";
-  constructor() {}
-  
+  constructor(public stateS:StateService) {
+
+  }
+
   ngOnInit(): void {
   }
 
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit {
       this.mostrar=true;
       this.mensaje_enlace="Ocultar"
      }
-    
+
   }
 }
 
