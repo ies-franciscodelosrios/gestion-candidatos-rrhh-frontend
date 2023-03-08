@@ -7,15 +7,13 @@ export interface Candidate{
   name:string, //+
   surname: string,//+
   description:string,//+
-  rejection_reason:string,//+
-  technical_test_url:string, //no poner por ahora +
- // status:CandidateStatus, //enum hacer con select -
- // contact:ContactMethod,//-
-  cv_date:Date, //+
-  interview_date:Date, //+
-  technical_test_date:Date,//+
-  hiring_date:Date,//+
-  first_contact_date:Date,//+
+  rejectionReason:string,//+
+  status:CandidateStatus|number, //enum hacer con select -
+  contact:ContactMethod|number,//-
+  cvDate:Date, //+
+  interviewDate:Date, //+
+  hiringDate:Date,//+
+  firstContactDate:Date,//+
   job:Job //no poner por ahora
 
 }
