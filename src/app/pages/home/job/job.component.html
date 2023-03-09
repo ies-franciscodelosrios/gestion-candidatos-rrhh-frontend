@@ -1,52 +1,95 @@
-<mat-toolbar >
-    <span>JOB Tittle</span>
-    <span class="spacer">Aqui va el icono</span>
-  </mat-toolbar>
-  <div id="containerAll">
-    <div style="width: 50%;">
-      <div style="height:55%">
-        <h1 class="titulo">{{'Descripcion' |translate}}</h1>
-        <div *ngIf="!editMode" style="height:70%">
-          <div class="area-texto">
-            {{text}}
-          </div>
-          <div class="boton-area">
-            <button mat-raised-button color="primary" (click)="editMode = true">{{'Editar' | translate}}</button>
-          </div>
+<div class="general">
+    <h2 class="title">Detalles de la oferta de trabajo</h2>
+    <div class="container1">
+        <div fxLayout="row">
+            <div fxLayout="column" fxFlex="50">
+                <mat-form-field>
+                    <mat-label>Proyecto</mat-label>
+                    <input matInput placeholder="Proyecto" [value]="job.project" readonly>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Area</mat-label>
+                    <input matInput placeholder="Area" [value]="job.area" readonly>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Rol</mat-label>
+                    <input matInput placeholder="Rol" [value]="job.rol" readonly>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Subrol</mat-label>
+                    <input matInput placeholder="Subrol" [value]="job.subRol" readonly>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Localización</mat-label>
+                    <input matInput placeholder="Localización" [value]="job.localization" readonly>
+                </mat-form-field>
+            </div>
+        
+            <div fxLayout="column" fxFlex="50">
+                <mat-form-field>
+                    <mat-label>Estado</mat-label>
+                    <input matInput placeholder="Estado" [value]="job.status" readonly>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Vacantes</mat-label>
+                    <input matInput type="number" placeholder="Vacantes" [value]="job.vacancies" readonly>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Descripción</mat-label>
+                    <textarea matInput placeholder="Descripción" [value]="job.description" readonly></textarea>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Fecha de creación</mat-label>
+                    <input matInput [matDatepicker]="picker2" [value]="job.creationDate" readonly>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+        
+                <mat-form-field>
+                    <mat-label>Fecha de cierre</mat-label>
+                    <input matInput [matDatepicker]="picker" [value]="job.closeDate" readonly>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
         </div>
-        <div *ngIf="editMode" style="height:70%">
-          <div class="area-texto">
-            <textarea [(ngModel)]="text" class="text-area"></textarea>
-          </div>
-          <div class="boton-area">
-            <button mat-raised-button color="primary" (click)="editMode = false">{{'Guardar' | translate}}</button>
-          </div>
-        </div>
-      </div>
-      <div style="height:45%">
-        <div class="contenedor-2">
-          <h1 class="titulo-2">{{'Añadir' | translate}} {{'Candidato' | translate}}</h1>
-          <div>
-            <input matInput placeholder="" [(ngModel)]="searchTerm">
-            <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
-          </div>
-        </div>
-        <div class="centrado">
-          <div class="cuadro-contenedor-2">
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="contenedor-3">
-      <mat-tab-group mat-align-tabs="start" id="tabsJob">
-        <mat-tab label="Selecionado">{{'Contenido' | translate}} {{'a' | translate}} {{'introducir' | translate}}</mat-tab>
-        <mat-tab label="En Proceso"></mat-tab>
-        <mat-tab label="Descartado"></mat-tab>
-      </mat-tab-group>
-      <div class="input-search">
-        <input matInput placeholder="" [(ngModel)]="searchTerm">
-        <button mat-raised-button color="primary" (click)="search()">{{'Buscar' | translate}}</button>
-      </div>
+    <div class="container2">
+        <div class="contenedor-tabla">
+            <table mat-table [dataSource]="dataSource" *ngIf="arrayCandidates > 0" >
+
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> {{ "Name" | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="surname">
+                    <th mat-header-cell *matHeaderCellDef> {{"Surname" | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef> {{"Status" | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="contact">
+                    <th mat-header-cell *matHeaderCellDef> {{"Contact" | translate}} </th>
+                    <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+                </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator #paginator [length]="arrayCandidates" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+            [hidePageSize]="true">
+          </mat-paginator>
+        </div>
     </div>
-  </div>
+</div>
 
