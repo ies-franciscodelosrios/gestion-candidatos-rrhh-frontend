@@ -95,7 +95,7 @@ export class CreateCandidateComponent implements OnInit {
         firstContactDate: this.form.get('first_contact_date')?.value,
         contact: this.form.get('contacto')?.value,
         status: this.form.get('status')?.value,
-        job: selectedJob
+        Rolid: selectedJob.id
       };
       firstValueFrom(this.candidateService.insert(candidate)).then(response => {
         if (response) {

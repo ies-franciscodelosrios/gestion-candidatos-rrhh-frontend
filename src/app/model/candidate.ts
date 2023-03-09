@@ -14,6 +14,7 @@ export interface Candidate{
   interviewDate:Date, //+
   hiringDate:Date,//+
   firstContactDate:Date,//+
-  job:Job //no poner por ahora
+  Rolid?:number,
+  job?:Job //no poner por ahora
 
 }
