@@ -18,8 +18,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class CreateJobComponent implements OnInit {
   constructor(private fb: FormBuilder, private translateService: TranslateService,private snack: MatSnackBar,
               public stateS: StateService, private jobs: JobService,
-              @Inject(MAT_DIALOG_DATA) public data: {mode:string,job?:Job}
-              ) {
+              @Inject(MAT_DIALOG_DATA) public data: {mode:string,job?:Job}) {
 
     this.form = this.fb.group({
       project: ['', [Validators.required, Validators.maxLength(30)]],
@@ -39,7 +38,7 @@ export class CreateJobComponent implements OnInit {
     })
   }
 
-  buttonMessage: string = this.data.mode === 'Create' ? 'Create' : 'Edit';
+  buttonMessage: string = this.data.mode === 'Create' ? 'Guardar' : 'Editar';
   rolValues: Rol[] = Object.values(Rol);
   form: FormGroup;
   subRolValues: SubRol[] = Object.values(SubRol);
@@ -67,7 +66,6 @@ export class CreateJobComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.data.mode)
     const Job: Job = {
       area: this.form.get('area')?.value,
       candidates: [],
@@ -108,6 +106,5 @@ export class CreateJobComponent implements OnInit {
           this.snack.open(await firstValueFrom(this.translateService.get("Error en la peticion")), 'Ok', {duration: 5000});
         })
     }
-
   }
 }

@@ -83,3 +83,13 @@
     width: 100%;
     align-items: center;
 }
+.boton{
+    cursor: pointer;
+}
+.mat-row:hover{
+    background-color: $navy-blue-90 !important;
+    cursor: pointer;
+    .mat-cell{
+        color: white;
+    }
+}

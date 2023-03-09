@@ -8,13 +8,16 @@ export const environment = {
     url: 'https://localhost:4200/api',
     endpoints:{
       candidateGetAll:'/Candidate/GetAll',
-      candidateGetById:'/Candidate/GetById',
+      candidateGetById:'/Candidate/GetById/',
       candidateInsert:'/Candidate/Insert',
       candidateUpdate:'/Candidate/Update',
+      candidateDelete:'/Candidate/Delete/',
       rolInsert:'/Rol/Insert',
       rolGetAll:'/Rol/GetAll',
-      rolGetById:'/Rol/GetById',
+      rolGetById:'/Rol/GetById/',
       rolUpdate:'/Rol/Update',
+      rolDelete:'/Rol/Delete/',
+      rolFindByProjectName:'/Rol/FindByProjectName/',
     }
   }
 };

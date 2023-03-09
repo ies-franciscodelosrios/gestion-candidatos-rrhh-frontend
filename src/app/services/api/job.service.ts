@@ -26,11 +26,11 @@ export class JobService {
   }
 
   getById(id: number): Observable<Job> {
-    return this.http.get<Job>(`${environment.api.url}/Job/GetById/${id}`);
+    return this.http.get<Job>(`${environment.api.url}${environment.api.endpoints.rolGetById}${id}`);
   }
   
   deleteById(id?: number): Observable<boolean> {
-    return this.http.delete<boolean>(`${environment.api.url}/Job/Delete/${id}`);
+    return this.http.delete<boolean>(`${environment.api.url}${environment.api.endpoints.rolDelete}${id}`);
   }
 
   getAll(): Observable<Job[]> {

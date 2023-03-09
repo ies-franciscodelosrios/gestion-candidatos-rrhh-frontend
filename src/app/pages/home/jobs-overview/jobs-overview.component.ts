@@ -6,6 +6,7 @@ import { JobService } from 'src/app/services/api/job.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateJobComponent } from '../create-job/create-job.component';
 import { Localization } from 'src/app/model/enums/Localization';
+import { JobComponent } from '../job/job.component';
 
 @Component({
   selector: 'app-jobs-overview',
@@ -34,7 +35,11 @@ export class JobsOverviewComponent implements OnInit {
       });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Resultado: ${result}`);
+      this.GetAllOffers();
     });
+  }
+  Refresh(){
+    this.GetAllOffers();
   }
 
 
@@ -47,6 +52,7 @@ export class JobsOverviewComponent implements OnInit {
     });
   }
   deleteOffer(element:Job){
+    console.log(element.id);
     this.jobService.deleteById(element.id).subscribe(offer => {
       this.GetAllOffers();
     });
@@ -65,4 +71,18 @@ export class JobsOverviewComponent implements OnInit {
     }
     return myEnum[order];
   }
+  showElement(element:Job){
+    const data = {mode:'Show',job:element};
+    const dialogRef = this.dialog.open(JobComponent,
+      {
+        data:data,
+        width: '80%',
+        height: '80%',
+      });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Resultado: ${result}`);
+      this.GetAllOffers();
+    });
+  }
+
 }
