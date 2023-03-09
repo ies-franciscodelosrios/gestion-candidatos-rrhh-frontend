@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Candidate } from 'src/app/model/candidate';
+import { RolStatus } from 'src/app/model/enums/RolStatus';
 import { CandidateService } from 'src/app/services/api/candidate.service';
+import { CreateCandidateComponent } from '../create-candidate/create-candidate.component';
 
 
 
@@ -14,16 +17,28 @@ import { CandidateService } from 'src/app/services/api/candidate.service';
 export class CandidatesOverviewComponent implements OnInit {
   @ViewChild('paginator') paginator: MatPaginator;
   candidates: Candidate[] = [];
-  displayedColumns: string[] = ['name', 'dni', 'gender', 'birthdate', 'mail'];
+  Status=RolStatus
+  displayedColumns: string[] = ['name', 'surname', 'description', 'status'];
   dataSource: MatTableDataSource<Candidate>;
 
   
 
-  constructor(private candidateServ: CandidateService) { }
+  constructor(private candidateServ: CandidateService, public dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.GetAllCandidates();
 
+  }
+  abrirPopup() {
+    const dialogRef = this.dialog.open(CreateCandidateComponent,
+      {
+        width: '80%',
+        height: '80%',
+      });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Resultado: ${result}`);
+      this.GetAllCandidates();
+    });
   }
   public GetAllCandidates(){
     this.candidateServ.getAll().subscribe(candidates => {
@@ -34,5 +49,16 @@ export class CandidatesOverviewComponent implements OnInit {
   }
   public formatBirthdate(birthdate: string) {
     return new Date(birthdate).toLocaleDateString();
+  }
+  public getEnumValueFromOrder(order:number,myEnum: any): string {
+    if(order<0 || order>myEnum.length-1) return "";
+    let i=0;
+    for(let key in myEnum) {
+      if (i==order){
+        return myEnum[key]
+      }
+      i++;
+    }
+    return myEnum[order];
   }
 }
