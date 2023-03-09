@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Job } from 'src/app/model/job';
 import {StateService} from "../../services/state.service";
+import { CreateJobComponent } from './create-job/create-job.component';
 
 
 
@@ -28,6 +30,12 @@ export class HomeComponent implements OnInit {
       this.mensaje_enlace="Ocultar"
      }
 
+  }
+
+  abrirPopup(job?:Job) {
+
+    const data = job?{mode:'Edit',job:job}:{mode:'Create'};
+    
   }
 }
 

@@ -16,7 +16,6 @@ export class JobService {
   constructor(private http:HttpClient) { }
 
   public insert(job: Job): Observable<boolean> {
-    console.log(job)
     const {candidates, ...jobWithoutCandidates} = job;
     job.rol = this._getValueOrdinal(Rol, job.rol);
     job.subRol = this._getValueOrdinal(SubRol, job.subRol);
@@ -29,9 +28,22 @@ export class JobService {
   getById(id: number): Observable<Job> {
     return this.http.get<Job>(`${environment.api.url}/Job/GetById/${id}`);
   }
+  
+  deleteById(id?: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${environment.api.url}/Job/Delete/${id}`);
+  }
 
   getAll(): Observable<Job[]> {
     return this.http.get<Job[]>(`${environment.api.url}${environment.api.endpoints.rolGetAll}`);
+  }
+  update(job: Job): Observable<boolean> {
+    const {candidates, ...jobWithoutCandidates} = job;
+    job.rol = this._getValueOrdinal(Rol, job.rol);
+    job.subRol = this._getValueOrdinal(SubRol, job.subRol);
+    job.localization = this._getValueOrdinal(Localization, job.localization);
+    job.status = this._getValueOrdinal(RolStatus, job.status);
+
+    return this.http.put<boolean>(`${environment.api.url}${environment.api.endpoints.rolUpdate}`,job)
   }
 
   /**

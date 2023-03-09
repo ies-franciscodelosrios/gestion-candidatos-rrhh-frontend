@@ -16,16 +16,19 @@ export class JobsOverviewComponent implements OnInit {
   @ViewChild('paginator') paginator: MatPaginator;
   offers: Job[] = [];
   Localization = Localization;
-  displayedColumns: string[] = ['project', 'area', 'localization', 'creationDate', 'closeDate'];
+  displayedColumns: string[] = ['project', 'area', 'localization', 'creationDate', 'closeDate','Botones'];
   dataSource: MatTableDataSource<Job>;
   constructor(public jobService: JobService, public dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.GetAllOffers();
   }
-  abrirPopup() {
+  abrirPopup(job?:Job) {
+
+    const data = job?{mode:'Edit',job:job}:{mode:'Create'};
     const dialogRef = this.dialog.open(CreateJobComponent,
       {
+        data:data,
         width: '80%',
         height: '80%',
       });
@@ -41,6 +44,11 @@ export class JobsOverviewComponent implements OnInit {
       console.log(this.offers[0].localization);
       this.dataSource = new MatTableDataSource(this.offers);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  deleteOffer(element:Job){
+    this.jobService.deleteById(element.id).subscribe(offer => {
+      this.GetAllOffers();
     });
   }
   public formatBirthdate(date: string) {
