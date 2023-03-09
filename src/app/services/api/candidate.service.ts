@@ -20,10 +20,11 @@ export class CandidateService {
   public insert(candidate: Candidate): Observable<boolean> {
     candidate.status = this._getValueOrdinal(CandidateStatus, candidate.status);
     candidate.contact = this._getValueOrdinal(ContactMethod, candidate.contact);
-    candidate.job.rol = this._getValueOrdinal(Rol,  candidate.job.rol);
+    /*candidate.job.rol = this._getValueOrdinal(Rol,  candidate.job.rol);
     candidate.job.subRol = this._getValueOrdinal(SubRol,  candidate.job.subRol);
     candidate.job.localization = this._getValueOrdinal(Localization,  candidate.job.localization);
-    candidate.job.status = this._getValueOrdinal(RolStatus,  candidate.job.status);
+    candidate.job.status = this._getValueOrdinal(RolStatus,  candidate.job.status);*/
+
     console.log(candidate)
     return this.http.post<boolean>(`${environment.api.url}${environment.api.endpoints.candidateInsert}`,candidate)
   }
