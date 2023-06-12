@@ -1,0 +1,193 @@
+<div class="container">
+  <app-breadcrumb></app-breadcrumb>
+  <ng-container *ngIf="!isInserting && !isUpdating">
+    <div class="data-container">
+      <div class="data-container-header">
+        <div>{{"position_info_formTitle"|translate}}</div>
+        <div style="margin-left: auto"></div>
+        <button (click)="deleteAction()" mat-raised-button class="cancelButton" type="button">{{"position_info_delete"|translate}}</button>
+        <button (click)="editAction()" mat-raised-button class="signInButton" type="button">{{"position_info_edit"|translate}}</button>
+      </div>
+
+      <div class="data-container-body">
+
+          <div class="data-container-select">
+            <p>{{"position_field_project"|translate}}</p>
+            <p>{{this.position.project?.name}}</p>
+          </div>
+
+          <div class="data-container-select">
+            <p>{{"position_field_area"|translate}}</p>
+            <p>{{this.position.area?.name}}</p>
+          </div>
+
+          <div class="data-container-select">
+            <p>{{"position_field_rol"|translate}}</p>
+            <p>{{this.position.rol?.name}}</p>
+          </div>
+
+          <div class="data-container-select">
+            <p>{{"position_field_subRol"|translate}}</p>
+            <p>{{this.position.subRol?.name}}</p>
+          </div>
+
+          <div class="data-container-select">
+            <p>{{"position_field_localization"|translate}}</p>
+            <p>{{this.position.localization?.name}}</p>
+          </div>
+
+          <div class="data-container-select">
+            <p>{{"position_field_status"|translate}}</p>
+            <p>{{position.status?.name}}</p>
+          </div>
+
+          <div class="data-container-integer">
+            <p>{{"position_field_vacancies"|translate}}</p>
+            <p>{{position.vacancies}}</p>
+          </div>
+
+          <div class="data-container-dates">
+            <p>{{"position_field_creationDate"|translate}} - {{"position_field_closingDate"|translate}}</p>
+            <div>
+              <p>{{position.creationDate|date:'dd/MM/yyyy'}}</p>
+              <mat-icon>arrow_forward</mat-icon>
+              <p>{{position.closingDate|date:'dd/MM/yyyy'}}</p>
+            </div>
+          </div>
+
+          <div class="data-container-description">
+            <p>{{"position_field_description"|translate}}</p>
+            <p>{{position.description}}</p>
+          </div>
+        </div>
+      </div>
+  </ng-container>
+
+  <ng-container *ngIf="isInserting || isUpdating">
+    <form class="data-container" [formGroup]="form">
+      <div class="data-container-header">
+
+        <div>{{"position_info_formTitle"|translate}}</div>
+        <div style="margin-left: auto"></div>
+        <button (click)="cancelAction()" mat-raised-button class="cancelButton" type="button">{{"position_info_cancel"|translate}}</button>
+        <button (click)="insertAction()" mat-raised-button class="signInButton" type="button">{{"position_info_save"|translate}}</button>
+
+      </div>
+
+      <div class="data-container-body">
+
+        <div class="data-container-select">
+          <p>{{"position_field_project"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <mat-select formControlName="project" [compareWith]="compareId">
+              <mat-option *ngFor="let project of lookUpService.projects" [value]="project">
+                {{project.name|translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-select">
+          <p>{{"position_field_area"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <mat-select formControlName="area" [compareWith]="compareId">
+              <mat-option *ngFor="let area of lookUpService.areas" [value]="area">
+                {{area.name|translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-select">
+          <p>{{"position_field_rol"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <mat-select formControlName="rol" [compareWith]="compareId">
+              <mat-option *ngFor="let rol of lookUpService.roles" [value]="rol">
+                {{rol.name|translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-select">
+          <p>{{"position_field_subRol"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <mat-select formControlName="subRol" [compareWith]="compareId">
+              <mat-option *ngFor="let subRol of lookUpService.subRoles" [value]="subRol">
+                {{subRol.name|translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-select">
+          <p>{{"position_field_localization"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <mat-select formControlName="localization" [compareWith]="compareId">
+              <mat-option *ngFor="let localization of lookUpService.localizations" [value]="localization">
+                {{localization.name|translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-select">
+          <p>{{"position_field_status"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <mat-select formControlName="status" [compareWith]="compareId">
+              <mat-option *ngFor="let status of lookUpService.positionStatus" [value]="status">
+                {{status.name|translate}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-integer">
+          <p>{{"position_field_vacancies"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <input matInput type="number" formControlName="vacancies">
+          </mat-form-field>
+        </div>
+
+        <div class="data-container-dates">
+          <p>{{"position_field_creationDate"|translate}} - {{"position_field_closingDate"|translate}}</p>
+          <div>
+            <mat-form-field>
+              <input matInput [matDatepicker]="startDatePicker" formControlName="creationDate">
+              <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDatePicker></mat-datepicker>
+            </mat-form-field>
+            <mat-icon>arrow_forward</mat-icon>
+            <mat-form-field>
+              <input matInput [matDatepicker]="endDatePicker" formControlName="closingDate">
+              <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+              <mat-datepicker #endDatePicker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="data-container-description">
+          <p>{{"position_field_description"|translate}}</p>
+          <mat-form-field class="formField" appearance="outline">
+            <input matInput type="text" formControlName="description">
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-container *ngIf="false">
+    <div class="table-container">
+      <app-overlay-spinner [show]="false"></app-overlay-spinner>
+      <app-candidate-table [dataSource]="candidates" [selection]="candidateSelectionModel" [multipleSelection]="true"></app-candidate-table>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="true">
+    <div class="table-container">
+      <app-overlay-spinner [show]="false"></app-overlay-spinner>
+      <app-application-table [dataSource]="applications" [selection]="applicationSelectionModel" [multipleSelection]="true"></app-application-table>
+    </div>
+  </ng-container>
+
+</div>
